@@ -1,0 +1,138 @@
+{
+  "A": [
+    {
+      "pattern": "all_real",
+      "TrD2": 12.0,
+      "TrD4": 36.0,
+      "geo": 0.0,
+      "S": 48.0
+    },
+    {
+      "pattern": "one_imag",
+      "TrD2": 12.0,
+      "TrD4": 36.0,
+      "geo": 0.0,
+      "S": 48.0
+    },
+    {
+      "pattern": "two_imag",
+      "TrD2": 12.0,
+      "TrD4": 36.0,
+      "geo": 0.0,
+      "S": 48.0
+    },
+    {
+      "pattern": "all_imag",
+      "TrD2": 12.0,
+      "TrD4": 36.0,
+      "geo": 0.0,
+      "S": 48.0
+    },
+    {
+      "pattern": "alternating",
+      "TrD2": 12.0,
+      "TrD4": 36.0,
+      "geo": 0.0,
+      "S": 48.0
+    }
+  ],
+  "B": [
+    {
+      "seed": 0,
+      "warm_S": 11.90313156106034,
+      "warm_geo": 0.00313077593905565,
+      "real_S": 44.212084079673346,
+      "real_TrD4": 30.201720250236786,
+      "real_sin2_ring": 0.0,
+      "free_S": 46.7680022764383,
+      "free_TrD4": 34.86487071537796,
+      "free_sin2_ring": 0.49102833799359996,
+      "free_imag_frac": 0.3333333333333333,
+      "delta_S_free_minus_real": 2.5559181967649565,
+      "delta_TrD4_free_minus_real": 4.663150465141175
+    },
+    {
+      "seed": 1,
+      "warm_S": 254.5662169634435,
+      "warm_geo": 8.012715256831177,
+      "real_S": 307.60105026111296,
+      "real_TrD4": 45.35684871657488,
+      "real_sin2_ring": 0.0,
+      "free_S": 301.1768038373352,
+      "free_TrD4": 46.6105868738917,
+      "free_sin2_ring": 0.5312904747819774,
+      "free_imag_frac": 0.5,
+      "delta_S_free_minus_real": -6.424246423777731,
+      "delta_TrD4_free_minus_real": 1.2537381573168176
+    },
+    {
+      "seed": 2,
+      "warm_S": 11.904414809306727,
+      "warm_geo": 0.003055519015263393,
+      "real_S": 44.29582887396904,
+      "real_TrD4": 30.343818364501054,
+      "real_sin2_ring": 0.0,
+      "free_S": 46.78680813144444,
+      "free_TrD4": 34.88239332213771,
+      "free_sin2_ring": 0.6189771111782443,
+      "free_imag_frac": 0.6666666666666666,
+      "delta_S_free_minus_real": 2.490979257475395,
+      "delta_TrD4_free_minus_real": 4.538574957636655
+    },
+    {
+      "seed": 3,
+      "warm_S": 270.5418352388739,
+      "warm_geo": 8.50149087577422,
+      "real_S": 333.7431341542391,
+      "real_TrD4": 52.34755817083888,
+      "real_sin2_ring": 0.0,
+      "free_S": 323.6476136527287,
+      "free_TrD4": 53.10577841385484,
+      "free_sin2_ring": 0.6824736856588358,
+      "free_imag_frac": 0.6666666666666666,
+      "delta_S_free_minus_real": -10.095520501510407,
+      "delta_TrD4_free_minus_real": 0.7582202430159626
+    },
+    {
+      "seed": 4,
+      "warm_S": 11.903131556922272,
+      "warm_geo": 0.00313063092265451,
+      "real_S": 44.21212700345647,
+      "real_TrD4": 30.20301113550861,
+      "real_sin2_ring": 0.0,
+      "free_S": 46.76825254444539,
+      "free_TrD4": 34.86512098752311,
+      "free_sin2_ring": 0.3152982064845116,
+      "free_imag_frac": 0.3333333333333333,
+      "delta_S_free_minus_real": 2.5561255409889156,
+      "delta_TrD4_free_minus_real": 4.662109852014503
+    },
+    {
+      "seed": 5,
+      "warm_S": 215.97565103326872,
+      "warm_geo": 6.750560657663466,
+      "real_S": 266.89394898032975,
+      "real_TrD4": 44.030577129331355,
+      "real_sin2_ring": 0.0,
+      "free_S": 261.3910274047212,
+      "free_TrD4": 45.41537637145246,
+      "free_sin2_ring": 0.2866679787618244,
+      "free_imag_frac": 0.3333333333333333,
+      "delta_S_free_minus_real": -5.502921575608525,
+      "delta_TrD4_free_minus_real": 1.3847992421211046
+    }
+  ],
+  "summary": {
+    "protocol_A_lowest_TrD4_pattern": "all_real",
+    "protocol_A_imag_beats_real": false,
+    "protocol_A_best_TrD4": 36.0,
+    "protocol_A_real_TrD4": 36.0,
+    "protocol_B_n_good_seeds": 3,
+    "protocol_B_frac_free_lower_S": 0.0,
+    "protocol_B_frac_free_lower_TrD4": 0.0,
+    "protocol_B_mean_free_sin2_ring": 0.4751012185521186,
+    "pass": false,
+    "note": "Hermitian D => eig(D^2)>=0 always; Exp2 does not test Lorentz signature, only whether Tr(D^4) favors imaginary phases.",
+    "criterion": "A: some imag pattern has TrD4 < all_real; B: >=50% good seeds free TrD4 < real and mean sin2_ring > 0.2"
+  }
+}

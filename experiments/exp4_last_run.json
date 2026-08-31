@@ -1,0 +1,35 @@
+{
+  "rows": [
+    {
+      "label": "uniform mass",
+      "winding": 0,
+      "n_sites": 400,
+      "eig_min_abs": 1.000007672150716,
+      "n_zero": 0,
+      "n_pos": 400,
+      "n_neg": 400,
+      "match": true
+    },
+    {
+      "label": "domain wall",
+      "winding": 1,
+      "n_sites": 400,
+      "eig_min_abs": 8.866740891858016e-18,
+      "n_zero": 2,
+      "n_pos": 399,
+      "n_neg": 399,
+      "match": false
+    }
+  ],
+  "summary": {
+    "uniform_zero": 0,
+    "wall_zero_total": 2,
+    "zero_mode_sites": [
+      200.0,
+      200.0
+    ],
+    "fermion_doubling": 2,
+    "pass": true,
+    "criterion": "uniform mass -> 0 zero modes; domain wall -> 2 zero modes at the wall (= winding 1 x fermion-doubling 2 of naive lattice Dirac)"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "rows": [
+    {
+      "label": "Euclidean",
+      "D_hermitian": true,
+      "eig_D2_min": -1.3619317503028618e-15,
+      "eig_D2_max": 14.128355544951933,
+      "n_pos": 112,
+      "n_neg": 0,
+      "n_zero": 16,
+      "indefinite": false
+    },
+    {
+      "label": "Lorentzian",
+      "D_hermitian": false,
+      "eig_D2_min": -3.4114741278097895,
+      "eig_D2_max": 3.411474127809786,
+      "n_pos": 48,
+      "n_neg": 48,
+      "n_zero": 32,
+      "indefinite": true
+    }
+  ],
+  "summary": {
+    "lorentzian_indefinite": true,
+    "euclidean_indefinite": false,
+    "pass": true,
+    "criterion": "Lorentzian D^2 is indefinite (pos+neg) while Euclidean D^2 is not"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "rows": [
+    {
+      "Nx": 30,
+      "Ny": 30,
+      "Phi": 0.0,
+      "n_plaquettes": 841,
+      "chern_flux": 0.0,
+      "eig_min_abs": 0.07162874149462997,
+      "n_zero": 0,
+      "n_pos": 900,
+      "n_neg": 900
+    },
+    {
+      "Nx": 30,
+      "Ny": 30,
+      "Phi": 0.009512485136741973,
+      "n_plaquettes": 841,
+      "chern_flux": 7.999999999999999,
+      "eig_min_abs": 0.00026119932754464493,
+      "n_zero": 16,
+      "n_pos": 892,
+      "n_neg": 892
+    }
+  ],
+  "summary": {
+    "no_field_zero": 0,
+    "field_zero": 16,
+    "chern_flux": 7.999999999999999,
+    "expected_zero": 16,
+    "pass": true,
+    "criterion": "B=0 -> 0 zero modes; B!=0 -> zero modes = 2 x Chern number (= total flux)"
+  }
+}
