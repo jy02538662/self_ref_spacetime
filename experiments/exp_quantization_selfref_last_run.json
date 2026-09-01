@@ -1,0 +1,25 @@
+{
+  "expA": {
+    "commutator_nonzero": true,
+    "matches_2i_sigma2": true
+  },
+  "expB": {
+    "eps": 0.5,
+    "break_energies": [
+      0.0,
+      0.25,
+      1.0,
+      2.25,
+      4.0
+    ],
+    "min_nonzero_break": 0.25,
+    "expected_eps2": 0.25,
+    "min_equals_eps2": true
+  },
+  "expC": {
+    "overlap_before_collapse": 0.34614532558963906,
+    "overlap_after_collapse": 1.0000000000000002,
+    "collapsed_to_eigenstate": true,
+    "state_changed": true
+  }
+}

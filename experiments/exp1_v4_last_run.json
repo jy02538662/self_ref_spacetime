@@ -1,0 +1,198 @@
+{
+  "rows": [
+    {
+      "beta": 0.01,
+      "seed": 0,
+      "accept_rate": 0.9948666666666667,
+      "pi_frac_mean": 0.2883333333333334,
+      "pi_frac_std": 0.09007712744581106,
+      "flux_mean": 9.120580404624121,
+      "pi_frac_min": 0.05,
+      "pi_frac_max": 0.55
+    },
+    {
+      "beta": 0.01,
+      "seed": 1,
+      "accept_rate": 0.9942,
+      "pi_frac_mean": 0.345,
+      "pi_frac_std": 0.10950646860650136,
+      "flux_mean": 9.967336507338654,
+      "pi_frac_min": 0.05,
+      "pi_frac_max": 0.65
+    },
+    {
+      "beta": 0.01,
+      "seed": 2,
+      "accept_rate": 0.9947,
+      "pi_frac_mean": 0.2836666666666667,
+      "pi_frac_std": 0.10238760775710223,
+      "flux_mean": 8.971786215977504,
+      "pi_frac_min": 0.0,
+      "pi_frac_max": 0.6
+    },
+    {
+      "beta": 0.01,
+      "seed": 3,
+      "accept_rate": 0.9944,
+      "pi_frac_mean": 0.33433333333333326,
+      "pi_frac_std": 0.09401004674442455,
+      "flux_mean": 10.088151550505938,
+      "pi_frac_min": 0.05,
+      "pi_frac_max": 0.55
+    },
+    {
+      "beta": 0.1,
+      "seed": 0,
+      "accept_rate": 0.9452333333333334,
+      "pi_frac_mean": 0.30600000000000005,
+      "pi_frac_std": 0.10800000000000001,
+      "flux_mean": 8.965205855556896,
+      "pi_frac_min": 0.05,
+      "pi_frac_max": 0.6
+    },
+    {
+      "beta": 0.1,
+      "seed": 1,
+      "accept_rate": 0.9438,
+      "pi_frac_mean": 0.35533333333333333,
+      "pi_frac_std": 0.10895666824731544,
+      "flux_mean": 9.559548979020532,
+      "pi_frac_min": 0.1,
+      "pi_frac_max": 0.65
+    },
+    {
+      "beta": 0.1,
+      "seed": 2,
+      "accept_rate": 0.9474666666666667,
+      "pi_frac_mean": 0.31100000000000005,
+      "pi_frac_std": 0.09914131328563286,
+      "flux_mean": 8.885532102687653,
+      "pi_frac_min": 0.1,
+      "pi_frac_max": 0.6
+    },
+    {
+      "beta": 0.1,
+      "seed": 3,
+      "accept_rate": 0.9444333333333333,
+      "pi_frac_mean": 0.35433333333333333,
+      "pi_frac_std": 0.11149539103578329,
+      "flux_mean": 9.702972268690324,
+      "pi_frac_min": 0.05,
+      "pi_frac_max": 0.65
+    },
+    {
+      "beta": 1.0,
+      "seed": 0,
+      "accept_rate": 0.48736666666666667,
+      "pi_frac_mean": 0.35566666666666663,
+      "pi_frac_std": 0.10528321592521553,
+      "flux_mean": 6.715287122414652,
+      "pi_frac_min": 0.0,
+      "pi_frac_max": 0.7
+    },
+    {
+      "beta": 1.0,
+      "seed": 1,
+      "accept_rate": 0.44316666666666665,
+      "pi_frac_mean": 0.4063333333333334,
+      "pi_frac_std": 0.10759440299362953,
+      "flux_mean": 7.098569800126396,
+      "pi_frac_min": 0.1,
+      "pi_frac_max": 0.8
+    },
+    {
+      "beta": 1.0,
+      "seed": 2,
+      "accept_rate": 0.4834,
+      "pi_frac_mean": 0.369,
+      "pi_frac_std": 0.11249740737753325,
+      "flux_mean": 6.429383156980019,
+      "pi_frac_min": 0.0,
+      "pi_frac_max": 0.7
+    },
+    {
+      "beta": 1.0,
+      "seed": 3,
+      "accept_rate": 0.4498,
+      "pi_frac_mean": 0.42333333333333334,
+      "pi_frac_std": 0.10656244908763854,
+      "flux_mean": 7.024422855362823,
+      "pi_frac_min": 0.15,
+      "pi_frac_max": 0.7
+    },
+    {
+      "beta": 10.0,
+      "seed": 0,
+      "accept_rate": 0.0015,
+      "pi_frac_mean": 0.5499999999999998,
+      "pi_frac_std": 2.220446049250313e-16,
+      "flux_mean": 0.34233542183949645,
+      "pi_frac_min": 0.55,
+      "pi_frac_max": 0.55
+    },
+    {
+      "beta": 10.0,
+      "seed": 1,
+      "accept_rate": 0.0014666666666666667,
+      "pi_frac_mean": 0.6,
+      "pi_frac_std": 0.0,
+      "flux_mean": 0.6756548440262512,
+      "pi_frac_min": 0.6,
+      "pi_frac_max": 0.6
+    },
+    {
+      "beta": 10.0,
+      "seed": 2,
+      "accept_rate": 0.0018333333333333333,
+      "pi_frac_mean": 0.6,
+      "pi_frac_std": 0.0,
+      "flux_mean": 0.5691855971284256,
+      "pi_frac_min": 0.6,
+      "pi_frac_max": 0.6
+    },
+    {
+      "beta": 10.0,
+      "seed": 3,
+      "accept_rate": 0.0008666666666666666,
+      "pi_frac_mean": 0.3,
+      "pi_frac_std": 0.0,
+      "flux_mean": 0.40823227416699587,
+      "pi_frac_min": 0.3,
+      "pi_frac_max": 0.3
+    }
+  ],
+  "summary": {
+    "by_beta": {
+      "0.01": {
+        "n_seeds": 4,
+        "pi_frac_grand_mean": 0.3128333333333333,
+        "pi_frac_spread_across_seeds": 0.027147232312378,
+        "mean_flux": 9.536963669611556,
+        "mean_accept_rate": 0.9945416666666667
+      },
+      "0.1": {
+        "n_seeds": 4,
+        "pi_frac_grand_mean": 0.33166666666666667,
+        "pi_frac_spread_across_seeds": 0.02323670468126759,
+        "mean_flux": 9.278314801488852,
+        "mean_accept_rate": 0.9452333333333334
+      },
+      "1.0": {
+        "n_seeds": 4,
+        "pi_frac_grand_mean": 0.38858333333333334,
+        "pi_frac_spread_across_seeds": 0.02733879518600305,
+        "mean_flux": 6.816915733720972,
+        "mean_accept_rate": 0.4659333333333333
+      },
+      "10.0": {
+        "n_seeds": 4,
+        "pi_frac_grand_mean": 0.5125,
+        "pi_frac_spread_across_seeds": 0.12437342963832748,
+        "mean_flux": 0.4988520342902923,
+        "mean_accept_rate": 0.0014166666666666668
+      }
+    },
+    "degeneracy_intact": false,
+    "criterion": "pi_frac grand mean stays ~0.5 across betas => 0/pi flux occupancy symmetric"
+  }
+}

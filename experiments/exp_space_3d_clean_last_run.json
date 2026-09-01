@@ -1,0 +1,46 @@
+{
+  "rows": [
+    {
+      "n": 27,
+      "n_per_dim": 3,
+      "lam": 30.0,
+      "seed": 0,
+      "success": false,
+      "geo": 0.0009802586277946972,
+      "hit_top6": 1.0,
+      "mean_degree": 3.0
+    },
+    {
+      "n": 27,
+      "n_per_dim": 3,
+      "lam": 30.0,
+      "seed": 1,
+      "success": false,
+      "geo": 0.0009802586277946972,
+      "hit_top6": 1.0,
+      "mean_degree": 3.0
+    },
+    {
+      "n": 27,
+      "n_per_dim": 3,
+      "lam": 30.0,
+      "seed": 2,
+      "success": false,
+      "geo": 0.0009802586277946972,
+      "hit_top6": 1.0,
+      "mean_degree": 3.0
+    }
+  ],
+  "summary": {
+    "by_lam": {
+      "30.0": {
+        "mean_hit_top6": 1.0,
+        "mean_geo": 0.0009802586277946972,
+        "mean_degree": 3.0
+      }
+    },
+    "best_lam": 30.0,
+    "best_hit_top6": 1.0,
+    "conclusion": "\u6700\u4f18 lam=30.0\uff0chit_top6=1.000\uff08\u5e72\u51c0\uff0c\u63a5\u8fd1 1.0\uff09"
+  }
+}

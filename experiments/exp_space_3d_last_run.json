@@ -1,0 +1,49 @@
+{
+  "rows": [
+    {
+      "n": 8,
+      "n_per_dim": 2,
+      "seed": 0,
+      "success": true,
+      "geo": 7.316916971159591,
+      "hit_neighbor": 0.6666666666666666,
+      "fp_non_neighbor": 0.1875,
+      "max_absD": 2.2497784072340234
+    },
+    {
+      "n": 8,
+      "n_per_dim": 2,
+      "seed": 1,
+      "success": true,
+      "geo": 3.749549947709561,
+      "hit_neighbor": 0.8333333333333334,
+      "fp_non_neighbor": 0.3125,
+      "max_absD": 1.2082059349058833
+    },
+    {
+      "n": 8,
+      "n_per_dim": 2,
+      "seed": 2,
+      "success": true,
+      "geo": 3.7858674692181578,
+      "hit_neighbor": 0.8333333333333334,
+      "fp_non_neighbor": 0.1875,
+      "max_absD": 1.1923051652950007
+    },
+    {
+      "n": 8,
+      "n_per_dim": 2,
+      "seed": 3,
+      "success": true,
+      "geo": 13.020258333250938,
+      "hit_neighbor": 0.5833333333333334,
+      "fp_non_neighbor": 0.3125,
+      "max_absD": 1.7074394538973228
+    }
+  ],
+  "summary": {
+    "mean_hit_neighbor": 0.7291666666666667,
+    "mean_fp_non_neighbor": 0.25,
+    "conclusion": "\u5f85\u8c03"
+  }
+}
