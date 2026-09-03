@@ -1,6 +1,8 @@
 # Self-Referential Spacetime — Numerical Closure Tests
 
-把「自指时空」里可证伪的两步做成数值实验。挂在 `AI_Analysis/self_ref_spacetime`，与业务代码隔离。
+「自指时空」的可证伪数值实验合集：一个自反性关系算子 \(D\)（\(D_{ij}=D_{ji}^*\)）如何涌现出距离、号差、拓扑、空间维数与量子骨架。
+
+> **归档状态（2026-09-03）**：项目处于**封存期**（考试复习，约至 2026-11），不再新增实验，仅保留可复现的记录。理论完整路线见 vault 笔记 [[量子潮水理论行动指南 v3（自指主线版）]] 与 [[断裂与自指：量子性的自指来源（严格推导+开放问题+实验任务）]]。
 
 **v0.1 命题（环）**：固定环型目标距离 \(L_{ij}\) 时，
 \(S=\mathrm{Tr}(D^2)+\lambda\sum_{i<j}(d_{ij}-L_{ij})^2\)
@@ -26,6 +28,13 @@ python -m experiments.exp_trace_anomaly
 python -m experiments.exp_quantization_selfref
 python -m experiments.exp_space_3d
 python -m experiments.exp_space_3d_anneal
+python -m experiments.exp_spectral_flow
+python -m experiments.exp6a_hopf_charge
+python -m experiments.exp_space_dim_compare
+python -m experiments.exp_eta_framing
+python -m experiments.exp_spectral_dim_compare
+python -m experiments.exp_cold_start
+python -m experiments.exp_spectral_dim
 ```
 
 ## Status
@@ -45,6 +54,13 @@ python -m experiments.exp_space_3d_anneal
 | 空间涌现·暖启动（exp_space_3d --warm-start） | **pass**（hit=1.000、geo=0.001，三维近邻是稳定解） |
 | 空间涌现·纯随机（exp_space_3d） | 卡局部极小（hit 0.62） |
 | 空间涌现·退火（exp_space_3d_anneal） | 自发接近三维（hit 0.82–0.90），精确难 |
+| 谱流 = 绕数（exp_spectral_flow） | **pass**（畴壁零模精确存在 E≈1e-16，λσ_y 驱动下穿越 0，能级追踪捕获；净谱流=绕数的整数不变量验证留 Exp6b） |
+| **Exp6a Hopf 荷 = odd Chern-Simons**（exp6a_hopf_charge） | **pass**（标准 Hopf 映射 → 0.99996；平凡场 → 0；Q=2 → 4=Q² 复合律；FFT 解矢势） |
+| 空间涌现·维度对比（exp_space_dim_compare） | **负结果**（暖启动 2D/3D/4D 全 hit=1.0——三维不特殊；冷启动 2D>3D>4D——复现几何框架偏向低维） |
+| **3/2 = 谱流 + η**（exp_eta_framing） | **pass**（1D 谱流=1、热核 η→±1/2、合成 3/2 = 整数 Hopf + 分数自旋） |
+| 谱维数区分维度（exp_spectral_dim_compare） | **pass**（热核 $K(t)=\mathrm{Tr}(e^{-tL})$ 读出 $d_s$：2D→2.01、3D→3.01、4D→4.02，不预设坐标） |
+| 谱维数·早期版（exp_spectral_dim） | 谱维数读出的早期实现，已被 exp_spectral_dim_compare 取代（后者更干净、可解析） |
+| 空间涌现·冷启动（exp_cold_start） | **负结果**（随机 D + 纯 Tr(D²) 不自发选维、只塌缩——暴露「自发选维」需要一个维度无关的维数压力项 = 第三层） |
 | 纯谱 / 3+1 选择 | out of scope |
 
 ## Pass criterion (Exp1)
@@ -137,22 +153,83 @@ $$\mathrm{Tr}(D^4)=16\cdot\tfrac18\cdot 3n=6n\quad(=36,\ n=6)$$
 
 **迹反常（`exp_trace_anomaly.py`）**——负结果：0 维 D 模型没有量纲嬗变（迹反常需要时空维度+能标+RG 流，单个矩阵是 0 维）。这排除了"在 0 维 D 里算迹反常"这条路，指向"尺度从反常来"需要先有空间（= 空间涌现）。
 
-**核心结论 + 下一步**：
+**核心结论**：
 - 量子性 = 断裂 + 自指 = 自指观测，已有推导+数值锚点（本体论内核立住）；
-- 空间涌现：复现三维已钉死（暖启动 hit=1.0）；自发选维缺"维数压力项"——极可能就是 Hopf 拓扑本身（只有三维能承载 Hopf 荷，所以 D 自动落向三维）。下一步：Exp6a（Hopf 荷=谱流）。
+- 空间涌现：复现三维已钉死（暖启动 hit=1.0）；档 2 维度对比（负结果）证「复现几何不选三维、偏向低维」；谱维数读步已落地（$d_s$=2/3/4 可读出）。
 
-## 下一步
+## 实验状态总结
 
 - **已闭环**：量子化自指（断裂+自指→量子性）+ 欧氏涌现（Exp1）+ 号差（Exp3）+ 拓扑零模（Exp4 绕数、Exp5 陈数）
-- **已钉死**：三维近邻是 D 的稳定解（暖启动 hit=1.0）
-- **下一站**：Exp6a（Hopf 荷 = 谱流，odd Chern-Simons 绕数，不是 η）→ 维数压力项（偏好 Hopf 荷，让 D 自发掉三维）
-- **远景**：玻恩规则、真统一
+- **已钉死**：三维近邻是 D 的稳定解（暖启动 hit=1.0）；Hopf 荷 = odd Chern-Simons（Exp6a，0.99996）；谱维数读出（exp_spectral_dim_compare，$d_s$=2/3/4）；总拓扑荷 3/2 的 1D 演示（exp_eta_framing）
+- **档 2 维度对比（负结果）**：复现几何不选三维、偏向低维
+
+## Exp6a：Hopf 荷 = odd Chern-Simons（2026-09-02）
+
+`experiments/exp6a_hopf_charge.py`——把「拓扑荷 = 谱不变量」从 1D/2D（绕数/陈数 = 零模，指标定理）推进到 3D（Hopf 荷 = odd Chern-Simons 绕数）。
+
+方法：给定 $n(\mathbf x):\mathbb R^3\to S^2$，算 emergent 磁场 $B_i=n\cdot(\partial_j n\times\partial_k n)$（谱微分），FFT 库仑规范解 $\nabla\times A=B$（$A_\text{hat}=-i(k\times B_\text{hat})/|k|^2$），$Q_H=\frac{1}{16\pi^2}\int A\cdot B\,d^3x$。
+
+| 场 | 预期 | 数值 Q_H |
+|---|---|---|
+| 平凡场 $n=(0,0,1)$ | 0 | 0（精确） |
+| 标准 Hopf 映射（Q=1） | 1 | 0.9962（N=64,L=5）→ **0.99996**（N=128,L=10） |
+| Q=2 场 | 4 | 3.99–4.00 |
+
+- Q=2 → 4 不是 bug，是 **Hopf 不变量的复合律** $H(g\circ f)=(\deg g)^2 H(f)$：$n=\mathrm{inv.stereo}((z_1/z_2)^Q)$ 在目标空间复合了度 Q 映射。这**独立验证了算法能分辨不同拓扑荷**（1 vs 4）。
+- Hopf 荷对盒子敏感：skyrmion 密度在无穷远 $1/r^4$ 衰减，$L=5$ 截断尾部（0.996），$L=10$ 才收敛。
+- 诚实边界：Exp6a 是**预设三维格点**，第三层（D 自发长出 $n(\mathbf x)$）仍开放；谱流版（族指标/Bott）是 Exp6b。
+
+## 谱流前置（exp_spectral_flow，2026-09-02 修正）
+
+旧版用「均匀质量 m 从 -m0→+m0」算谱流得 flow=0——物理上对（1D 周期 Dirac 能级成对只触碰 0 不穿越）。修正为**畴壁 + λσ_y + 能级追踪**：畴壁束缚精确零模（E≈1e-16），λσ_y 给零模能量偏移，零模随 λ 穿越 0 被能级追踪（贪心最近邻）捕获。「净谱流=绕数」作为整数不变量需闭环参数族 + 手征破缺，留 Exp6b。
+
+## 空间涌现·维度对比（exp_space_dim_compare，2026-09-02）
+
+`experiments/exp_space_dim_compare.py`——把目标距离 L 换成 2D/3D/4D 超立方曼哈顿距离，比较 D 复现各维度的难易（同一框架 $S=\mathrm{Tr}(D^2)+\lambda\cdot$geo，只优化模长、相位固定 0，因作用量只依赖 $|z|$）。
+
+| 维度 | N | 暖启动 hit | 冷启动 excess（归一化） |
+|---|---|---|---|
+| 2D | 25 | 1.0（稳定） | 0.64 |
+| 3D | 27 | 1.0（稳定） | 0.59 |
+| 4D | 16 | 1.0（稳定） | 0.55（baseline 修正后） |
+
+**负结果**：① 暖启动 2D/3D/4D 全 hit=1.0——「三维是稳定解」不特殊；② 冷启动 2D>3D>4D——维度越低越好找（配位数越少 $\mathrm{Tr}(D^2)$ 越便宜）。**结论：复现几何框架不选三维、反而偏向低维；「三维特殊」必须来自 Hopf 拓扑压力项（第三层），不在复现几何这一层。** 印证「维数压力项 = Hopf 拓扑」是必要的。
+
+坑：4D n=2 超立方全角点、无内部态，真实配位是 4 不是 2d=8；baseline 应按 `mean(len(neighbors))` 算。
+
+## 3/2 = 谱流 + η 分数部分（exp_eta_framing，2026-09-02）
+
+`experiments/exp_eta_framing.py`——1D 数值演示「总拓扑荷 = 整数 Hopf（谱流）+ 分数自旋（η framing）= 半整数 3/2」。
+
+模型：$S^1$ 上 1D Dirac 算子 $D_A=-i\,d/d\theta+A$（周期边界），本征值 $\lambda_n=n+A$（$n$ 整数，精确）。
+
+- **谱流（整数）**：一族 $D(t)=-i\,d/d\theta+t$，$t:0\to1$ 的本征值净上穿 0 次数 = **1**（数值逐点追踪）；
+- **η-不变量（分数）**：热核正则化 $\eta_\varepsilon=\sum_n \mathrm{sign}(n+A)\,e^{-\varepsilon|n+A|}$，$\varepsilon\to0$ 收敛到闭式 $1-2A$——$A=1/4\to+1/2$、$A=3/4\to-1/2$（自旋 framing 的 $\pm1/2$，数值偏差降到 $4\times10^{-7}$）；
+- **合成**：$1+\tfrac12=\tfrac32$。
+
+诚实边界：这是 1D 类比（演示机制）；真正的 3D Hopf 荷（整数=1）已由 Exp6a 钉死（0.99996），这里补的是 η 的分数部分（1/2）。两者在 framed/APS 框架里合成 3/2。真正的 $S^3$ 上自旋 1/2 Hopfion 的 $\eta=3/2$ 需在具体 Dirac 算子上把 η 完整算出来（未做）。
+
+## 谱维数区分维度（exp_spectral_dim_compare，2026-09-02）
+
+`experiments/exp_spectral_dim_compare.py`——谱层第一步「读」：谱维数 $d_s$ 从热核 $K(t)=\mathrm{Tr}(e^{-tL})\sim t^{-d_s/2}$ 读出，区分 2D/3D/4D，不预设坐标。
+
+用周期边界 d 维超立方晶格的拉普拉斯 L 的解析本征值 $\lambda=4\sum_j\sin^2(\pi m_j/n)$，热核迹 $K(t)=[\sum_m e^{-4t\sin^2(\pi m/n)}]^d$，在中间 t 区间（$1\ll t\ll n^2$）拟合 $\log K$ vs $\log t$，斜率 $=-d_s/2$。
+
+| 维度 | n | t 区间 | $d_s$ | 目标 |
+|---|---|---|---|---|
+| 2D | 100 | [10,100] | 2.009 | 2 ✓ |
+| 3D | 60 | [10,100] | 3.014 | 3 ✓ |
+| 4D | 40 | [10,60] | 4.018 | 4 ✓ |
+
+**两个坑（重要）**：① $K(t)$ 里的 $D^2$ 必须是**图拉普拉斯**，不是邻接矩阵——邻接矩阵的谱在能带中心（$\sum\cos=0$）DOS 是常数，$\mathrm{Tr}(e^{-tA^2})\sim t^{-1/2}$，所有维度都读出 $d_s\approx1$（错）；② $t$ 要取**中间区**（$1\ll t\ll n^2$），不是「小 $t$」——小 $t$ 时 $K\approx N$ 常数（斜率≈0）。
+
+**诚实定位**：这是「读」步（谱维数读出 D 的维数），不是「选」步。谱维数本身不选三维，只是给了一个**不预设坐标的维度读数**，作为后续「维数压力项」的原料；「选」步（偏好 $d_s=3$）预设了三维，是循环，落在第三层（为什么 SU(2)）。
 
 ## Layout
 
 ```
 self_ref_spacetime/
   src/           # D 参数化、最短路、作用量、指标、闭合环磁通
-  experiments/   # Exp1 环近邻；Exp2 Tr(D^4)/相位；Exp3 Dirac 号差；Exp4 拓扑零模；Exp5 陈数；Exp1 v2/v3/v4 磁通项；exp_trace_anomaly 迹反常；exp_quantization_selfref 量子化自指；exp_space_3d(+anneal) 空间涌现
+  experiments/   # Exp1 环近邻；Exp2 Tr(D^4)/相位；Exp3 Dirac 号差；Exp4 拓扑零模；Exp5 陈数；Exp1 v2/v3/v4 磁通项；exp_trace_anomaly 迹反常；exp_quantization_selfref 量子化自指；exp_space_3d(+anneal) 空间涌现；exp_spectral_flow 谱流；exp6a_hopf_charge Hopf 荷（odd Chern-Simons）；exp_space_dim_compare 维度对比（负结果）；exp_eta_framing 3/2=谱流+η；exp_spectral_dim_compare 谱维数区分维度；exp_cold_start 冷启动（负结果）；exp_spectral_dim 谱维数早期版（被 compare 取代）
   tests/         # 已知环 D → d 与解析一致
 ```

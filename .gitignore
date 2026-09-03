@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# 运行产物 / 日志
+*.log
+err.txt
+out.txt
+*_stdout.txt
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# 虚拟环境
+venv/
+.venv/
+env/
+
+# 大场数据（可复算，不提交）
+*.npy
+*.npz
