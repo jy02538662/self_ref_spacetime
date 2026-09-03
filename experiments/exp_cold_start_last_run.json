@@ -1,0 +1,36 @@
+{
+  "rows": [
+    {
+      "n": 27,
+      "seed": 0,
+      "TrD2_initial": 178.19016811530827,
+      "TrD2_final": 1.758868122489469e-14,
+      "max_abs_z_final": 5.024095228180305e-09,
+      "spectral_dim_initial": 1.6832713711671855e-13,
+      "spectral_dim_final": 1.6832713711671855e-13
+    },
+    {
+      "n": 27,
+      "seed": 1,
+      "TrD2_initial": 152.14870905257274,
+      "TrD2_final": 1.7567709774480116e-14,
+      "max_abs_z_final": 5.007738331228703e-09,
+      "spectral_dim_initial": 1.6832713711671855e-13,
+      "spectral_dim_final": 1.6832713711671855e-13
+    },
+    {
+      "n": 27,
+      "seed": 2,
+      "TrD2_initial": 154.90160016566014,
+      "TrD2_final": 1.755375568118418e-14,
+      "max_abs_z_final": 5.003106841944816e-09,
+      "spectral_dim_initial": 1.6832713711671855e-13,
+      "spectral_dim_final": 1.6832713711671855e-13
+    }
+  ],
+  "summary": {
+    "mean_TrD2_final": 1.757004889351966e-14,
+    "mean_spectral_dim_final": 1.6832713711671855e-13,
+    "conclusion": "\u7eaf\u8026\u5408\u6210\u672c\u628a D \u538b\u5230 0\uff0c\u8c31\u7ef4\u6570\u584c\u7f29\u5230 ~0\u2014\u2014\u51b7\u542f\u52a8\u4e0d\u6d8c\u73b0\uff0c\u53ea\u4f1a\u584c\u7f29\u3002\u81ea\u53d1\u9009\u7ef4\u9700\u8981\u4e00\u4e2a\u7ef4\u5ea6\u65e0\u5173\u7684\u7ef4\u6570\u538b\u529b\u9879\uff08\u7b2c\u4e09\u5c42\u7684\u574e\uff09\u3002"
+  }
+}

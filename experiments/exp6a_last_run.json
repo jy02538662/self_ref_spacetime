@@ -1,0 +1,34 @@
+{
+  "rows": [
+    {
+      "Q_target": 0,
+      "QH": 0.0,
+      "divB_rms_over_B_rms": 0.0,
+      "B_rms": 0.0
+    },
+    {
+      "Q_target": 1,
+      "QH": 0.999830578740752,
+      "divB_rms_over_B_rms": 0.010935166971533813,
+      "B_rms": 0.07033238932487154
+    },
+    {
+      "Q_target": 2,
+      "QH": 3.6043066464879905,
+      "divB_rms_over_B_rms": 0.9256301573882253,
+      "B_rms": 0.1545227806115835
+    }
+  ],
+  "summary": {
+    "criterion": "Q_H ~= 1 (Hopf map); Q=0 -> 0; Q>=2 -> Q^2 (composition law H(g.f)=(deg g)^2 H(f))",
+    "Q_H_values": [
+      0.0,
+      0.999830578740752,
+      3.6043066464879905
+    ],
+    "Q1_close_to_1": true,
+    "Q0_is_zero": true,
+    "Q2_close_to_Q2": false,
+    "pass": false
+  }
+}

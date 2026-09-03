@@ -1,0 +1,10 @@
+{
+  "ring_1d_spectral_dim": 1.1831757186502376,
+  "grid_2d_spectral_dim": 2.396013711441557,
+  "grid_3d_spectral_dim": 3.8493646529510666,
+  "expected": {
+    "1d": 1.0,
+    "2d": 2.0,
+    "3d": 3.0
+  }
+}
