@@ -21,7 +21,7 @@ This would be **numerical evidence** for “internal symmetry is an output of $D
 Keep Exp1’s self-referential skeleton:
 
 $$
-S[D]=\mathrm{Tr}(D^{2})+\lambda_{1}\sum_{i<j}\bigl(d_{ij}-L_{ij}\bigr)^{2}
+S[D]=\mathrm{Tr}(D^{2})+\lambda_{1}\sum_{i \lt j}\bigl(d_{ij}-L_{ij}\bigr)^{2}
 $$
 
 - $\mathrm{Tr}(D^{2})$: coupling cost (favors fewer / weaker links)
@@ -54,7 +54,7 @@ $$
 On $d_{ij}$ or $|D|$:
 
 1. **Intra / inter coupling ratio**:
-   $$\frac{\mathrm{mean}\,|z|_{\mathrm{intra}}}{\mathrm{mean}\,|z|_{\mathrm{inter}}}>10^{3}$$
+   $$\frac{\mathrm{mean}\,|z|_{\mathrm{intra}}}{\mathrm{mean}\,|z|_{\mathrm{inter}}}\gt 10^{3}$$
 2. **Cluster-size histogram**: $k$-means or spectral clustering on $d_{ij}$; does size $k=2$ dominate?
 3. **Silhouette score** $>0.9$
 4. **Pauli decomposition** (after Scheme 1 holds): for each $2\times 2$ reduced block, expand in $\{I,\sigma_x,\sigma_y,\sigma_z\}$ and check whether the three $\sigma$ components are continuously tunable (spin direction)
