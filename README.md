@@ -68,8 +68,8 @@ python -m experiments.exp_finite_quantization
 | Exp3 Dirac 结构 → 洛伦兹号差 | **pass**（欧氏 $D^2$ 全非负；洛伦兹 $D^2$ 正负 48/48/32，不定 $(-,+)$） |
 | Exp4 拓扑荷 → 零模（Jackiw-Rebbi） | **pass**（绕数 0 无零模；绕数 1 → 2 零模在畴壁，E≈1e-18） |
 | Exp5 二维陈数 → 零模（量子霍尔） | **pass**（陈数 8 → 16 零模 = 陈数 × 2 费米子加倍） |
-| Exp1 v2 闭合环磁通项 | **pass**（flux 惩罚把磁通从随机压到 0/π Z₂ 通量，0/π 简并） |
-| Exp1 v3 曲率项定义对比 | **pass**（sin→Z₂、wilson→零磁通、cos→$\pm\pi/2$；曲率定义决定磁通零点） |
+| Exp1 v2 闭合环磁通项 | **pass**（flux 惩罚把磁通从随机压到 $0$/$\pi$ Z₂ 通量，$0$/$\pi$ 简并） |
+| Exp1 v3 曲率项定义对比 | **pass**（sin→Z₂、wilson→零磁通、cos→$\pm \frac{\pi}{2}$；曲率定义决定磁通零点） |
 | Exp1 v4 热采样（MCMC） | **负结果**（温度驱动磁通有序化，但经典热不打破 Z₂ 简并） |
 | 迹反常（exp_trace_anomaly） | **负结果**（0 维 D 模型无量纲嬗变——迹反常需时空维度+能标，单个矩阵是 0 维） |
 | 量子化自指三实验（exp_quantization_selfref） | **pass**（$[X,D]=2i\sigma_2$ 不对易、断裂最小单位=$\varepsilon^2$、投影坍缩） |
@@ -79,7 +79,7 @@ python -m experiments.exp_finite_quantization
 | 谱流 = 绕数（exp_spectral_flow） | **pass**（畴壁零模精确存在 E≈1e-16，$\lambda\sigma_y$ 驱动下穿越 0，能级追踪捕获；净谱流=绕数的整数不变量验证留 Exp6b） |
 | **Exp6a Hopf 荷 = odd Chern-Simons**（exp6a_hopf_charge） | **pass**（标准 Hopf 映射 → 0.99996；平凡场 → 0；Q=2 → 4=$Q^2$ 复合律；FFT 解矢势） |
 | 空间涌现·维度对比（exp_space_dim_compare） | **负结果**（暖启动 2D/3D/4D 全 hit=1.0——三维不特殊；冷启动 2D>3D>4D——复现几何框架偏向低维） |
-| **3/2 = 谱流 + $\eta$**（exp_eta_framing） | **pass**（1D 谱流=1、热核 $\eta\to$$\pm 1/2$、合成 3/2 = 整数 Hopf + 分数自旋） |
+| **3/2 = 谱流 + $\eta$**（exp_eta_framing） | **pass**（1D 谱流=1、热核 $\eta \to \pm \frac{1}{2}$、合成 3/2 = 整数 Hopf + 分数自旋） |
 | 谱维数区分维度（exp_spectral_dim_compare） | **pass**（热核 $K(t)=\mathrm{Tr}(e^{-tL})$ 读出 $d_s$：2D→2.01、3D→3.01、4D→4.02，不预设坐标） |
 | 谱维数·早期版（exp_spectral_dim） | 谱维数读出的早期实现，已被 exp_spectral_dim_compare 取代（后者更干净、可解析） |
 | 空间涌现·冷启动（exp_cold_start） | **负结果**（随机 D + 纯 $\mathrm{Tr}(D^2)$ 不自发选维、只塌缩——暴露「自发选维」需要一个维度无关的维数压力项 = 第三层） |
@@ -98,9 +98,9 @@ python -m experiments.exp_finite_quantization
 | **配对 ↔ 辫子交叉**（exp_pairing_to_braid） | **pass**（skein：交叉=配对{1,e}的量子叠加 $\sigma=A\cdot 1+A^{-1}e$，正负=系数 $A\leftrightarrow A^{-1}$ 互换；R 本征值 $3\oplus 1$=通道非正负；纯 FPL 构型 $Kauffman=d^{c-1}$ 只依赖闭合弦数——补上「配对→交叉」这一概念缺口的精确版） |
 | **辫子词 → Jones**（exp_braid_word_to_jones） | **pass**（正向闭环：辫子词→skein→配对→Markov迹(数圈)→Kauffman→Jones；Hopf/Trefoil/Figure-8 对教科书值，R-II/R-III 不变性成立——B 路线第二~四步的正向链） |
 | **A 从哪来（量子化开关）**（exp_quantization_condition） | **pass（边界澄清）**（经典自洽不固定 $A$——任意 $A\neq 0$ 都满足 $R\cdot R^{-1}=I$，$A$ 是自由参数；量子化=单位根 $q^{k+2}=1$ 才固定 $A$，此时 $-d=A^2+A^{-2}$=量子维度（$k=1\to 1.732<2$），经典极限 $k\to\infty$ 恢复 2——第三层唯一剩下的开关 = 量子相干，非经典自洽能推出） |
-| **量子化真正来自 Jones-Wenzl 截断**（exp_jones_wenzl） | **pass（机制澄清）**（Hecke 关系对任意 $q$ 自洽、不逼出单位根；逼出单位根的是 Jones-Wenzl 幂等元存在性——Chebyshev 量子维度 $\Delta_n$ 在 $\delta=-2\cos(\pi/(k+2))$ 时 $\Delta_{k+1}=0$，$f_{k+2}$ 消失 = SU(2)_k 截断。「绕自己一圈不多不少」（$f_n^2=f_n$）才是「整个一不能看出破绽」的精确数学形式） |
+| **量子化真正来自 Jones-Wenzl 截断**（exp_jones_wenzl） | **pass（机制澄清）**（Hecke 关系对任意 $q$ 自洽、不逼出单位根；逼出单位根的是 Jones-Wenzl 幂等元存在性——Chebyshev 量子维度 $\Delta_n$ 在 $\delta=-2\cos\!\left(\frac{\pi}{k+2}\right)$ 时 $\Delta_{k+1}=0$，$f_{k+2}$ 消失 = SU(2)_k 截断。「绕自己一圈不多不少」（$f_n^2=f_n$）才是「整个一不能看出破绽」的精确数学形式） |
 | **关系自指 → 拓扑自指（桥的性质）**（exp_relation_to_topology） | **pass（边界澄清）**（厄米 $D_{ij}=D_{ji}^*$ 的谱投影 $P_k$ 自动幂等 $P_k^2=P_k$——"关系→拓扑"的免费桥（谱定理），但只给 $\{0,1\}$ 平凡投影，不给量子化；量子化=单位根需额外截断 $\Delta_{k+1}=0$（Chebyshev 零点），厄米性推不出——第三层墙 = 第二个付费桥） |
-| **有限 N → 单位根（量子化桥）**（exp_finite_quantization） | **pass（数学恒等式）**（N 条最大弦 ⟹ $\delta=2\cos(\pi/(N+1))$ 使 $\Delta_{N-1}=1$、$\Delta_N=0$（Chebyshev 零点恒等式，N=3..8 全部精确）⟹ 单位根 ⟹ level $k=N-1$；A_k 结构（N 个自旋 0..k/2）融合规则验证。「有限→量子化」是**证明的数学恒等式**；唯一剩下的开放输入 =「D 用满 N 条弦」= 区分所有节点 = v3 公设「观察=一次有向区分」） |
+| **有限 N → 单位根（量子化桥）**（exp_finite_quantization） | **pass（数学恒等式）**（N 条最大弦 ⟹ $\delta=2\cos\!\left(\frac{\pi}{N+1}\right)$ 使 $\Delta_{N-1}=1$、$\Delta_N=0$（Chebyshev 零点恒等式，N=3..8 全部精确）⟹ 单位根 ⟹ level $k=N-1$；A_k 结构（N 个自旋 0..k/2）融合规则验证。「有限→量子化」是**证明的数学恒等式**；唯一剩下的开放输入 =「D 用满 N 条弦」= 区分所有节点 = v3 公设「观察=一次有向区分」） |
 | 纯谱 / 3+1 选择 | out of scope |
 
 ## Pass criterion (Exp1)
@@ -153,7 +153,7 @@ $$D=\begin{pmatrix}0&z\\ w&0\end{pmatrix}$$
 
 厄米 $=$ $w=\overline z$，于是 $zw=|z|^2\ge0$：无论 $z$ 实还是虚，$D^2$ 恒正定。唯一让 $D^2$ 变负的是 $w=-z$（实、反对称、不取共轭），此时 $D$ 非厄米（$D^\dagger=-D$）。
 
-**所以：号差 = 时间方向的"有向性"（实反对称/非厄米），不是"虚相位"。** 空间对称给 $+$，时间反对称给 $-$，合起来 $D^2\to+\partial_x^2-\partial_t^2=\square$，洛伦兹号差 $(-,+)$ 自然出现。
+**所以：号差 = 时间方向的"有向性"（实反对称/非厄米），不是"虚相位"。** 空间对称给 $+$，时间反对称给 $-$，合起来 $D^2 \to +\partial_x^2-\partial_t^2=\square$，洛伦兹号差 $(-,+)$ 自然出现。
 
 ## Exp2 的解析定理（$\mathrm{Tr}(D^4)$ 对相位盲）
 
@@ -171,28 +171,28 @@ $$\mathrm{Tr}(D^4)=16\cdot\tfrac18\cdot 3n=6n\quad(=36,\ n=6)$$
 
 把「相位 = 规范联络」落成第一个对相位敏感的作用量项。动机：Exp2 已证谱矩 $\mathrm{Tr}(D^{2m})$ 对相位盲，故改走闭合环磁通 $\Phi_{ijk}=\phi_{ij}+\phi_{jk}-\phi_{ik}$（格点规范理论的威尔逊环），用复数乘积算 $\sin\Phi$ 避开 arg 分支切割。
 
-**Exp1 v2**（`exp1_v2_flux.py`）：作用量加 $\mu\sum_{i<j<k}\sin^2\Phi_{ijk}$。结果：flux 惩罚把磁通从随机（~9.4）压到 0，但相位**没有**变实矩阵——它压到了「0 或 π 磁通」（Z₂ 通量态）。铁证：$\overline{\cos\Phi} = 1-2\times\text{pi\_frac}$ 精确成立（4 个种子全对），说明每个三角形磁通是二值的（0/π）。
+**Exp1 v2**（`exp1_v2_flux.py`）：作用量加 $\mu\sum_{i<j<k}\sin^2\Phi_{ijk}$。结果：flux 惩罚把磁通从随机（~9.4）压到 0，但相位**没有**变实矩阵——它压到了「$0$ 或 $\pi$ 磁通」（Z₂ 通量态）。铁证：$\overline{\cos\Phi} = 1 - 2\,\mathrm{pi\_frac}$ 精确成立（4 个种子全对），说明每个三角形磁通是二值的（$0$/$\pi$）。
 
 **Exp1 v3**（`exp1_v3_flux_compare.py`）：对比三种曲率定义 $F$，结论是「曲率项的定义决定磁通有序化到哪个零点」：
 
 | 曲率 F | 零点 | 收敛到的磁通 |
 |---|---|---|
-| $\sin\Phi$ | 0 和 π | Z₂ 通量（0/π 简并） |
-| $|e^{i\Phi}-1|$ | 只有 0 | 零磁通（实矩阵） |
-| $\cos\Phi$ | $\pm\pi/2$ | 全三角形 $\pm\pi/2$ 最大磁通（quarter_frac=1.0） |
+| $\sin\Phi$ | $0$ 和 $\pi$ | Z₂ 通量（$0$/$\pi$ 简并） |
+| $|e^{i\Phi}-1|$ | 只有 $0$ | 零磁通（实矩阵） |
+| $\cos\Phi$ | $\pm \frac{\pi}{2}$ | 全三角形 $\pm \frac{\pi}{2}$ 最大磁通（quarter_frac=1.0） |
 
-**Exp1 v4**（`exp1_v4_mcmc.py`）：Metropolis-Hastings 采样 $e^{-\beta S}$（**经典热**，不是量子）。结果：温度驱动磁通有序化（flux 从高温 ~9.5 随机 → 低温 ~0.5 冻结到 0/π），高温 pi_frac≈1/3 精确等于均匀磁通下 $\cos\Phi<-0.5$ 的概率；但 Z₂ 简并**未被热涨落打破**（低温跨种子 pi_frac≈0.5，无偏好）。已知坑：$\beta=10$ 步长 0.3 太大、accept≈0（未充分热化）；判据曾把 0.5 当随机基准（实为 1/3），主结论不变。
+**Exp1 v4**（`exp1_v4_mcmc.py`）：Metropolis-Hastings 采样 $e^{-\beta S}$（**经典热**，不是量子）。结果：温度驱动磁通有序化（flux 从高温 ~9.5 随机 → 低温 ~0.5 冻结到 $0$/$\pi$），高温 pi_frac≈1/3 精确等于均匀磁通下 $\cos\Phi<-0.5$ 的概率；但 Z₂ 简并**未被热涨落打破**（低温跨种子 pi_frac≈0.5，无偏好）。已知坑：$\beta=10$ 步长 0.3 太大、accept≈0（未充分热化）；判据曾把 0.5 当随机基准（实为 1/3），主结论不变。
 
 **核心结论（负结果，两个钉子）**：
 1. 经典曲率惩罚**不能生成**非平凡拓扑——它只把磁通抹平到 F 的零点；哪个磁通被允许由 F 的定义决定，不由物理偏好决定。
-2. 经典热涨落**不能打破** Z₂ 简并——打破 0/π 简并 → SU(2)，需要量子相干（$e^{iS}$）或额外对称破缺，不是热。
+2. 经典热涨落**不能打破** Z₂ 简并——打破 $0$/$\pi$ 简并 → SU(2)，需要量子相干（$e^{iS}$）或额外对称破缺，不是热。
 
 > 这排除了「设计经典作用量让 SU(2)/Hopf 拓扑自发涌现」这条路，把「为什么 SU(2)」的答案从「作用量」推向「拓扑荷守恒/量子化」（= B4 迹反常 + 弦网凝聚）。已同步记入 vault 的《涌现时空模型：后续可证明与扩展方向》（排除的错路）与《字典观测点》（记录表）。
 
 ## 量子化自指 + 空间涌现（exp_quantization_selfref / exp_space_3d / exp_space_3d_anneal，2026-09-01）
 
 **量子化自指（断裂+自指→量子性）**——本体论内核，六步推导 + 三个数值实验（`exp_quantization_selfref.py`）：
-- ExpA：位置 $X=\sigma_3$（对角）、动量 $P=\sigma_1$（非对角），$[X,P]=2i\sigma_2\ne0$（自指两端必然不对易）；
+- ExpA：位置 $X=\sigma_3$（对角）、动量 $P=\sigma_1$（非对角），$[X,P]=2i\sigma_2 \ne 0$（自指两端必然不对易）；
 - ExpB：断裂贡献 $|\mathbf d|^2$ 离散化，最小非零单位 $=\varepsilon^2$（断裂最小单位 = 一个量子 = $\hbar$）；
 - ExpC：投影观测 → 坍缩（叠加态重叠 0.346 → 本征态 1.000）。
 
@@ -253,11 +253,11 @@ $$\mathrm{Tr}(D^4)=16\cdot\tfrac18\cdot 3n=6n\quad(=36,\ n=6)$$
 
 模型：$S^1$ 上 1D Dirac 算子 $D_A=-i\,d/d\theta+A$（周期边界），本征值 $\lambda_n=n+A$（$n$ 整数，精确）。
 
-- **谱流（整数）**：一族 $D(t)=-i\,d/d\theta+t$，$t:0\to1$ 的本征值净上穿 0 次数 = **1**（数值逐点追踪）；
-- **$\eta$-不变量（分数）**：热核正则化 $\eta_\varepsilon=\sum_n \mathrm{sign}(n+A)\,e^{-\varepsilon|n+A|}$，$\varepsilon\to0$ 收敛到闭式 $1-2A$——$A=1/4\to+1/2$、$A=3/4\to-1/2$（自旋 framing 的 $\pm1/2$，数值偏差降到 $4\times10^{-7}$）；
+- **谱流（整数）**：一族 $D(t)=-i\,d/d\theta+t$，$t:0 \to 1$ 的本征值净上穿 0 次数 = **1**（数值逐点追踪）；
+- **$\eta$-不变量（分数）**：热核正则化 $\eta_\varepsilon=\sum_n \mathrm{sign}(n+A)\,e^{-\varepsilon|n+A|}$，$\varepsilon \to 0$ 收敛到闭式 $1-2A$——$A=1/4 \to +1/2$、$A=3/4 \to -1/2$（自旋 framing 的 $\pm \frac{1}{2}$，数值偏差降到 $4\times10^{-7}$）；
 - **合成**：$1+\tfrac12=\tfrac32$。
 
-诚实边界：这是 1D 类比（演示机制）；真正的 3D Hopf 荷（整数=1）已由 Exp6a 钉死（0.99996），这里补的是 η 的分数部分（1/2）。两者在 framed/APS 框架里合成 3/2。真正的 $S^3$ 上自旋 1/2 Hopfion 的 $\eta=3/2$ 需在具体 Dirac 算子上把 η 完整算出来（未做）。
+诚实边界：这是 1D 类比（演示机制）；真正的 3D Hopf 荷（整数=1）已由 Exp6a 钉死（0.99996），这里补的是 $\eta$ 的分数部分（1/2）。两者在 framed/APS 框架里合成 3/2。真正的 $S^3$ 上自旋 1/2 Hopfion 的 $\eta=3/2$ 需在具体 Dirac 算子上把 $\eta$ 完整算出来（未做）。
 
 ## 谱维数区分维度（exp_spectral_dim_compare，2026-09-02）
 
@@ -277,7 +277,7 @@ $$\mathrm{Tr}(D^4)=16\cdot\tfrac18\cdot 3n=6n\quad(=36,\ n=6)$$
 
 ## 弦网凝聚 sanity check（exp_string_net_condensation，2026-09-04）
 
-`experiments/exp_string_net_condensation.py`——把「自指闭弦 → SU(2)_k 弦网相」这个 if-then 的两个「if」**分开**做 sanity check，明确不组装成证明。理论路线（vault 笔记）是：自指闭弦 → 弦网相 → 谱三元组 → GR，其中「闭弦 → 弦网相」需要两个 if：① 张力 $T\to0$（弦凝聚）；② 融合结构 = SU(2)_k（=「为什么 SU(2)」公设）。
+`experiments/exp_string_net_condensation.py`——把「自指闭弦 → SU(2)_k 弦网相」这个 if-then 的两个「if」**分开**做 sanity check，明确不组装成证明。理论路线（vault 笔记）是：自指闭弦 → 弦网相 → 谱三元组 → GR，其中「闭弦 → 弦网相」需要两个 if：① 张力 $T \to 0$（弦凝聚）；② 融合结构 = SU(2)_k（=「为什么 SU(2)」公设）。
 
 **Part A：SU(2)_k 拓扑纠缠熵目标（解析）**——量子维数 $d_j=[2j+1]_q$、总量子维数 $D=\sum_j d_j^2$、TEE $\gamma=\log D$：
 
@@ -468,7 +468,7 @@ $$\mathrm{Tr}(D^4)=16\cdot\tfrac18\cdot 3n=6n\quad(=36,\ n=6)$$
 
 `experiments/exp_quantization_condition.py`——交叉振幅 $A$（$\sigma=A\cdot1+A^{-1}e$）是自由参数还是被自洽逼出？
 
-**结果**：① 经典自洽不固定 A——任意 $A\neq0$ 都满足 $R\cdot R^{-1}=I$（数值 1e-16），$A$ 是自由参数；② 量子化 = 单位根 $q^{k+2}=1$ 才固定 $A=q^{1/4}$，此时 $-d=A^2+A^{-2}=2\cos(\pi/(2(k+2)))$ = 量子维度（k=1→1.732<2）；③ 经典极限 k→∞ 恢复 2。
+**结果**：① 经典自洽不固定 A——任意 $A \neq 0$ 都满足 $R\cdot R^{-1}=I$（数值 1e-16），$A$ 是自由参数；② 量子化 = 单位根 $q^{k+2}=1$ 才固定 $A=q^{1/4}$，此时 $-d=A^2+A^{-2}=2\cos\!\left(\frac{\pi}{2(k+2)}\right)$ = 量子维度（k=1→1.732<2）；③ 经典极限 k→∞ 恢复 2。
 
 **意义**：$-d=A^2+A^{-2}$ 才是量子维度（**不是 $A$ 本身**）；$A$ 是自由参数，量子化（单位根）是**物理输入**，不能从经典自洽长出。第三层唯一剩下的开关 = 量子相干。
 
@@ -476,7 +476,7 @@ $$\mathrm{Tr}(D^4)=16\cdot\tfrac18\cdot 3n=6n\quad(=36,\ n=6)$$
 
 `experiments/exp_jones_wenzl.py`——量子化（单位根）的真正来源：Hecke 关系还是 Jones-Wenzl 幂等元？
 
-**结果**：① Hecke 关系 $\sigma^2=(q-1)\sigma+q$ 对任意 $q$ 自洽（不逼出单位根）；② Jones-Wenzl 幂等元 $f_n$ 存在 $\Leftrightarrow$ Chebyshev $\Delta_{n-1}\neq0$；③ SU(2)_k 的 $\delta=-2\cos(\pi/(k+2))$ 使 $\Delta_{k+1}=0$（$f_{k+2}$ 消失）= 截断 = 单位根。
+**结果**：① Hecke 关系 $\sigma^2=(q-1)\sigma+q$ 对任意 $q$ 自洽（不逼出单位根）；② Jones-Wenzl 幂等元 $f_n$ 存在 $\Leftrightarrow$ Chebyshev $\Delta_{n-1} \neq 0$；③ SU(2)_k 的 $\delta=-2\cos\!\left(\frac{\pi}{k+2}\right)$ 使 $\Delta_{k+1}=0$（$f_{k+2}$ 消失）= 截断 = 单位根。
 
 **意义（修正「Hecke 逼出单位根」的直觉）**：量子化机制 = **Jones-Wenzl 幂等元存在性（截断）**，不是 Hecke 关系。「绕自己一圈不多不少」（$f_n^2=f_n$）才是「整个一不能看出破绽」的精确数学形式。
 
@@ -486,13 +486,13 @@ $$\mathrm{Tr}(D^4)=16\cdot\tfrac18\cdot 3n=6n\quad(=36,\ n=6)$$
 
 **结果**：① 厄米 $D$ 的谱投影 $P_k=q_kq_k^\dagger$ **自动幂等**（$|P_k^2-P_k|\sim10^{-16}$，本征值 $\{0,1\}$）= 谱定理，白送；② 两步分解——厄米→投影（免费/可推导），投影→单位根截断（付费/额外）；③ 截断 $\Delta_{k+1}=0$ 是 Chebyshev 零点（额外条件）。
 
-**意义**：关系自指 → 拓扑自指是**两座桥**——免费桥（厄米→谱投影幂等，平凡 $\{0,1\}$）+ 付费桥（投影→单位根截断）。**第三层的墙 = 付费桥**，名字是「本征值尺度为什么恰好 $\delta=2\cos(\pi/(k+2))$」（= 耦合强度为什么有界、界为什么是 2）。
+**意义**：关系自指 → 拓扑自指是**两座桥**——免费桥（厄米→谱投影幂等，平凡 $\{0,1\}$）+ 付费桥（投影→单位根截断）。**第三层的墙 = 付费桥**，名字是「本征值尺度为什么恰好 $\delta=2\cos\!\left(\frac{\pi}{k+2}\right)$」（= 耦合强度为什么有界、界为什么是 2）。
 
 ## 有限 N → 单位根（exp_finite_quantization，2026-09-05）
 
-`experiments/exp_finite_quantization.py`——从"有限"（N 条弦）推出量子化 $\delta=2\cos(\pi/(k+2))$ 的桥。
+`experiments/exp_finite_quantization.py`——从"有限"（N 条弦）推出量子化 $\delta=2\cos\!\left(\frac{\pi}{k+2}\right)$ 的桥。
 
-**结果**：① **Chebyshev 零点恒等式**——$\delta=2\cos(\pi/(N+1))$ 时 $\Delta_{N-1}=1$（$f_N$ 存在）、$\Delta_N=0$（$f_{N+1}$ 消失），N=3..8 全部精确；② 这个 $\delta$ 精确 = SU(2)_k 的 $2\cos(\pi/(k+2))$，level $k=N-1$；③ $A_k$ 结构——N 个自旋 $0,\frac12,\dots,\frac k2$ 的量子维度满足融合规则 $[\frac12]^2=[0]+[1]$。
+**结果**：① **Chebyshev 零点恒等式**——$\delta=2\cos\!\left(\frac{\pi}{N+1}\right)$ 时 $\Delta_{N-1}=1$（$f_N$ 存在）、$\Delta_N=0$（$f_{N+1}$ 消失），N=3..8 全部精确；② 这个 $\delta$ 精确 = SU(2)_k 的 $2\cos\!\left(\frac{\pi}{k+2}\right)$，level $k=N-1$；③ $A_k$ 结构——N 个自旋 $0,\frac12,\dots,\frac k2$ 的量子维度满足融合规则 $[\frac12]^2=[0]+[1]$。
 
 **意义（突破）**：**「有限 $N$ 条最大弦 $\Rightarrow$ $\delta$=单位根」是证明的数学恒等式**（Chebyshev 零点），所以「有限 → 量子化」从猜想变成了定理。唯一剩下的开放输入 = 「D 用满 N 条弦」（= 区分所有 N 个节点）= v3 压缩公设「观察 = 一次有向区分」。量子化的开关 = 这个公设本身。
 
@@ -501,6 +501,6 @@ $$\mathrm{Tr}(D^4)=16\cdot\tfrac18\cdot 3n=6n\quad(=36,\ n=6)$$
 ```
 self_ref_spacetime/
   src/           # D 参数化、最短路、作用量、指标、闭合环磁通
-  experiments/   # Exp1 环近邻；Exp2 Tr(D^4)/相位；Exp3 Dirac 号差；Exp4 拓扑零模；Exp5 陈数；Exp1 v2/v3/v4 磁通项；exp_trace_anomaly 迹反常；exp_quantization_selfref 量子化自指；exp_space_3d(+anneal) 空间涌现；exp_spectral_flow 谱流；exp6a_hopf_charge Hopf 荷（odd Chern-Simons）；exp_space_dim_compare 维度对比（负结果）；exp_eta_framing 3/2=谱流+$\eta$；exp_spectral_dim_compare 谱维数区分维度；exp_cold_start 冷启动（负结果）；exp_spectral_dim 谱维数早期版（被 compare 取代）；exp_string_net_condensation 弦网凝聚 sanity check（Part A log D / Part B 张力凝聚 / Part C 加权 B_p）；exp_born_deviation Born 偏离判据演示（弱命题 SO(3) 协变 + 偏离判据）；exp_entanglement_area_law 纠缠熵面积律 vs 体积律；exp_entanglement_area_law_dim 纠缠熵面积律 + 维度（2D/3D）；exp_area_law_locality 面积律 = 局域性判据（费米面 vs 随机图）；exp_bare_reconnection 裸重连动力学（负结果：裸动力学不组织）；exp_phase_connection 相位当联络（U(1) 麦克斯韦→平坦，三维靠非阿贝尔 Hopf/链接）；exp_wilson_invariant Wilson 全局不变量（Q=∏W(C) 严格守恒 = 拓扑荷种子）；exp_su2_wilson SU(2) Wilson 环（U(1) 种子 → SU(2) 相对链接）；exp_group_commutator 群交换子 L（非对易度量，非链接数）；exp_yang_baxter 辫子 R 矩阵（QYBE/braid，交叉→辫群）；exp_jones Jones 多项式（区分平凡 2D vs Hopf 3D）；exp_pairing_to_braid 配对↔辫子交叉（skein：交叉=配对{1,e}的叠加，正负=系数互换）；exp_braid_word_to_jones 辫子词→skein→配对→Markov迹→Kauffman/Jones（Hopf/Trefoil/Figure-8 + R-II/R-III）；exp_quantization_condition A 从哪来（经典自洽不固定 A、量子化=单位根、量子维度、经典极限）；exp_jones_wenzl 量子化真正来自 Jones-Wenzl 截断（Hecke 不自洽逼出、幂等元存在性逼出单位根）；exp_relation_to_topology 关系自指→拓扑自指（厄米→谱投影幂等=免费桥、投影→单位根=付费桥）；exp_finite_quantization 有限 N→单位根（N 最大弦→$\delta=2\cos(\pi/(N+1))$，Chebyshev 恒等式，level $k=N-1$）
+  experiments/   # Exp1 环近邻；Exp2 Tr(D^4)/相位；Exp3 Dirac 号差；Exp4 拓扑零模；Exp5 陈数；Exp1 v2/v3/v4 磁通项；exp_trace_anomaly 迹反常；exp_quantization_selfref 量子化自指；exp_space_3d(+anneal) 空间涌现；exp_spectral_flow 谱流；exp6a_hopf_charge Hopf 荷（odd Chern-Simons）；exp_space_dim_compare 维度对比（负结果）；exp_eta_framing 3/2=谱流+$\eta$；exp_spectral_dim_compare 谱维数区分维度；exp_cold_start 冷启动（负结果）；exp_spectral_dim 谱维数早期版（被 compare 取代）；exp_string_net_condensation 弦网凝聚 sanity check（Part A log D / Part B 张力凝聚 / Part C 加权 B_p）；exp_born_deviation Born 偏离判据演示（弱命题 SO(3) 协变 + 偏离判据）；exp_entanglement_area_law 纠缠熵面积律 vs 体积律；exp_entanglement_area_law_dim 纠缠熵面积律 + 维度（2D/3D）；exp_area_law_locality 面积律 = 局域性判据（费米面 vs 随机图）；exp_bare_reconnection 裸重连动力学（负结果：裸动力学不组织）；exp_phase_connection 相位当联络（U(1) 麦克斯韦→平坦，三维靠非阿贝尔 Hopf/链接）；exp_wilson_invariant Wilson 全局不变量（Q=∏W(C) 严格守恒 = 拓扑荷种子）；exp_su2_wilson SU(2) Wilson 环（U(1) 种子 → SU(2) 相对链接）；exp_group_commutator 群交换子 L（非对易度量，非链接数）；exp_yang_baxter 辫子 R 矩阵（QYBE/braid，交叉→辫群）；exp_jones Jones 多项式（区分平凡 2D vs Hopf 3D）；exp_pairing_to_braid 配对↔辫子交叉（skein：交叉=配对{1,e}的叠加，正负=系数互换）；exp_braid_word_to_jones 辫子词→skein→配对→Markov迹→Kauffman/Jones（Hopf/Trefoil/Figure-8 + R-II/R-III）；exp_quantization_condition A 从哪来（经典自洽不固定 A、量子化=单位根、量子维度、经典极限）；exp_jones_wenzl 量子化真正来自 Jones-Wenzl 截断（Hecke 不自洽逼出、幂等元存在性逼出单位根）；exp_relation_to_topology 关系自指→拓扑自指（厄米→谱投影幂等=免费桥、投影→单位根=付费桥）；exp_finite_quantization 有限 N→单位根（N 最大弦→$\delta=2\cos\!\left(\frac{\pi}{N+1}\right)$，Chebyshev 恒等式，level $k=N-1$）
   tests/         # 已知环 D → d 与解析一致
 ```
