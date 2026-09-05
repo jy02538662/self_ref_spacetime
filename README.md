@@ -56,7 +56,6 @@ Exp2 fail（Tr(D⁴) 对相位盲）；Exp3 pass（号差需 Dirac / 有向结�
 | 总判词 + 归档数字 | [门控板与数据总表](#gate-board) |
 | 逐实验细表 | [实验数据详表](#experimental-data) |
 | 论文式子 / 长推导 | vault 笔记或论文 PDF（本 README 不承担讲义） |
-| Exp7 设计（未实现） | [`exp7_design.md`](exp7_design.md) |
 
 ---
 
@@ -465,7 +464,6 @@ self_ref_spacetime/
     flux.py         # 闭合环磁通
   experiments/      # 门控脚本 + *_last_run.json
   tests/
-  exp7_design.md    # Exp7 设计（未实现）
   requirements.txt
   README.md
 ```
