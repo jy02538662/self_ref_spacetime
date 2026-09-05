@@ -1,13 +1,13 @@
 # Self-Referential Spacetime — Numerical Closure Tests
 
-「自指时空」的可证伪数值实验合集：一个自反性关系算子 $D$（$D_{ij}=D_{ji}^*$）如何涌现出距离、号差、拓扑、空间维数与量子骨架。
+「自指时空」的可证伪数值实验合集：一个自反性关系算子 $D$（其中 $D_{ij}=D_{ji}^{\ast}$）如何涌现出距离、号差、拓扑、空间维数与量子骨架。
 
 > **归档状态（2026-09-03）**：项目处于**封存期**（考试复习，约至 2026-11），不再新增实验，仅保留可复现的记录。理论完整路线见 vault 笔记 [[量子潮水理论行动指南 v3（自指主线版）]] 与 [[断裂与自指：量子性的自指来源（严格推导+开放问题+实验任务）]]。
 
 **v0.1 命题（环）**：固定环型目标距离 $L_{ij}$ 时，
 
 $$
-S=\mathrm{Tr}(D^2)+\lambda\sum_{i<j}(d_{ij}-L_{ij})^2
+S=\mathrm{Tr}(D^2)+\lambda\sum_{i \lt j}\left(d_{ij}-L_{ij}\right)^2
 $$
 
 的数值极小解，是否自发变成近邻环图。
@@ -61,53 +61,59 @@ python -m experiments.exp_finite_quantization
 
 ## Status
 
+> **Obsidian 提示**：Markdown **表格单元格内不支持** `$...$` 公式；下表用 Unicode/ASCII。完整 LaTeX 见下文各 Exp 节。
+
+
 | Item | Result |
 |------|--------|
 | Exp1 环 + 近邻涌现 | **pass**（多峰；约 3/8 种子进干净环盆地） |
-| Exp2 $\mathrm{Tr}(D^4)$ 虚耦合 | **fail**（等模环上相位不降 TrD4；自由相位不优于全实） |
-| Exp3 Dirac 结构 → 洛伦兹号差 | **pass**（欧氏 $D^2$ 全非负；洛伦兹 $D^2$ 正负 48/48/32，不定 $(-,+)$） |
+| Exp2 Tr(D⁴) 虚耦合 | **fail**（等模环上相位不降 TrD4；自由相位不优于全实） |
+| Exp3 Dirac 结构 → 洛伦兹号差 | **pass**（欧氏 D² 全非负；洛伦兹 D² 正负 48/48/32，不定 (-,+)） |
 | Exp4 拓扑荷 → 零模（Jackiw-Rebbi） | **pass**（绕数 0 无零模；绕数 1 → 2 零模在畴壁，E≈1e-18） |
 | Exp5 二维陈数 → 零模（量子霍尔） | **pass**（陈数 8 → 16 零模 = 陈数 × 2 费米子加倍） |
-| Exp1 v2 闭合环磁通项 | **pass**（flux 惩罚把磁通从随机压到 $0$/$\pi$ Z₂ 通量，$0$/$\pi$ 简并） |
-| Exp1 v3 曲率项定义对比 | **pass**（sin→Z₂、wilson→零磁通、cos→$\pm \frac{\pi}{2}$；曲率定义决定磁通零点） |
+| Exp1 v2 闭合环磁通项 | **pass**（flux 惩罚把磁通从随机压到 0/π Z₂ 通量，0/π 简并） |
+| Exp1 v3 曲率项定义对比 | **pass**（sin→Z₂、wilson→零磁通、cos→±π/2；曲率定义决定磁通零点） |
 | Exp1 v4 热采样（MCMC） | **负结果**（温度驱动磁通有序化，但经典热不打破 Z₂ 简并） |
 | 迹反常（exp_trace_anomaly） | **负结果**（0 维 D 模型无量纲嬗变——迹反常需时空维度+能标，单个矩阵是 0 维） |
-| 量子化自指三实验（exp_quantization_selfref） | **pass**（$[X,D]=2i\sigma_2$ 不对易、断裂最小单位=$\varepsilon^2$、投影坍缩） |
+| 量子化自指三实验（exp_quantization_selfref） | **pass**（[X,D]=2iσ₂ 不对易、断裂最小单位=ε²、投影坍缩） |
 | 空间涌现·暖启动（exp_space_3d --warm-start） | **pass**（hit=1.000、geo=0.001，三维近邻是稳定解） |
 | 空间涌现·纯随机（exp_space_3d） | 卡局部极小（hit 0.62） |
 | 空间涌现·退火（exp_space_3d_anneal） | 自发接近三维（hit 0.82–0.90），精确难 |
-| 谱流 = 绕数（exp_spectral_flow） | **pass**（畴壁零模精确存在 E≈1e-16，$\lambda\sigma_y$ 驱动下穿越 0，能级追踪捕获；净谱流=绕数的整数不变量验证留 Exp6b） |
-| **Exp6a Hopf 荷 = odd Chern-Simons**（exp6a_hopf_charge） | **pass**（标准 Hopf 映射 → 0.99996；平凡场 → 0；Q=2 → 4=$Q^2$ 复合律；FFT 解矢势） |
+| 谱流 = 绕数（exp_spectral_flow） | **pass**（畴壁零模精确存在 E≈1e-16，λσ_y 驱动下穿越 0，能级追踪捕获；净谱流=绕数的整数不变量验证留 Exp6b） |
+| **Exp6a Hopf 荷 = odd Chern-Simons**（exp6a_hopf_charge） | **pass**（标准 Hopf 映射 → 0.99996；平凡场 → 0；Q=2 → 4=Q² 复合律；FFT 解矢势） |
 | 空间涌现·维度对比（exp_space_dim_compare） | **负结果**（暖启动 2D/3D/4D 全 hit=1.0——三维不特殊；冷启动 2D>3D>4D——复现几何框架偏向低维） |
-| **3/2 = 谱流 + $\eta$**（exp_eta_framing） | **pass**（1D 谱流=1、热核 $\eta \to \pm \frac{1}{2}$、合成 3/2 = 整数 Hopf + 分数自旋） |
-| 谱维数区分维度（exp_spectral_dim_compare） | **pass**（热核 $K(t)=\mathrm{Tr}(e^{-tL})$ 读出 $d_s$：2D→2.01、3D→3.01、4D→4.02，不预设坐标） |
+| **3/2 = 谱流 + η**（exp_eta_framing） | **pass**（1D 谱流=1、热核 η→±1/2、合成 3/2 = 整数 Hopf + 分数自旋） |
+| 谱维数区分维度（exp_spectral_dim_compare） | **pass**（热核 K(t)=Tr(e^{−tL}) 读出 d_s：2D→2.01、3D→3.01、4D→4.02，不预设坐标） |
 | 谱维数·早期版（exp_spectral_dim） | 谱维数读出的早期实现，已被 exp_spectral_dim_compare 取代（后者更干净、可解析） |
-| 空间涌现·冷启动（exp_cold_start） | **负结果**（随机 D + 纯 $\mathrm{Tr}(D^2)$ 不自发选维、只塌缩——暴露「自发选维」需要一个维度无关的维数压力项 = 第三层） |
-| **弦网凝聚 sanity check**（exp_string_net_condensation） | **已知工具复现（非推进，封存）**（Part A：SU(2)_k 的 TEE 目标 log D；Part B：张力→0 环密度 0→0.5、参与率 1→460 = 凝聚机制；Part C：加权 B_p → $d_j^2$/D 分布，真空被压到 1/D） |
+| 空间涌现·冷启动（exp_cold_start） | **负结果**（随机 D + 纯 Tr(D²) 不自发选维、只塌缩——暴露「自发选维」需要一个维度无关的维数压力项 = 第三层） |
+| **弦网凝聚 sanity check**（exp_string_net_condensation） | **已知工具复现（非推进，封存）**（Part A：SU(2)_k 的 TEE 目标 log D；Part B：张力→0 环密度 0→0.5、参与率 1→460 = 凝聚机制；Part C：加权 B_p → d_j²/D 分布，真空被压到 1/D） |
 | **Born 偏离判据演示**（exp_born_deviation） | **pass**（自指：p_Born SO(3) 协变，偏离 6e-16；引入偏好方向 e 后偏离 0.50；偏离随 e 强度线性缩放、e=0 归零） |
 | **纠缠熵·面积律 vs 体积律**（exp_entanglement_area_law） | **pass**（1D 链：局域基态 S~0.15 ln L 次体积、随机态 S~0.38 L 体积律——演示纠缠熵标度 = 局域性签名） |
 | **纠缠熵·面积律 + 维度**（exp_entanglement_area_law_dim） | **pass**（2D：S~l^1.25 周长律非面积；3D：S~l^2.25 面积律非体积——指数 = 维度） |
 | **面积律 = 局域性判据**（exp_area_law_locality） | **pass**（1D 链有费米面→面积律 S~0.85→1.17；随机图无费米面→体积律 S~6.7→38.6；判据 = 费米面非跳跃范围） |
 | **裸重连动力学**（exp_bare_reconnection） | **负结果**（4-正则图上满填充圈 + 局部重连，全部接受→均匀游走→弦统计乱跳、不组织；印证「裸动力学无偏好不产生结构」） |
-| **相位当联络**（exp_phase_connection） | **pass（负倾向）**（相位=U(1) 联络，Wilson 环/面通量是拓扑对象；但麦克斯韦项 $-\sum_p\cos\Phi_p$ 极小化到平坦/平庸——三维靠非阿贝尔 Hopf/链接） |
-| **Wilson 全局不变量**（exp_wilson_invariant） | **pass**（$Q=\prod_C W(C)=\prod_{\text{edges}} e^{i\theta}$ 严格重连不变量，Q_wilson=Q_direct、5 万步偏差 4e-15——拓扑荷的种子） |
+| **相位当联络**（exp_phase_connection） | **pass（负倾向）**（相位=U(1) 联络，Wilson 环/面通量是拓扑对象；但麦克斯韦项 −Σ_p cos Φ_p 极小化到平坦/平庸——三维靠非阿贝尔 Hopf/链接） |
+| **Wilson 全局不变量**（exp_wilson_invariant） | **pass**（Q=∏_C W(C) 严格重连不变量，Q_wilson=Q_direct、5 万步偏差 4e-15——拓扑荷的种子） |
 | **SU(2) Wilson 环**（exp_su2_wilson） | **pass**（U(1) 升级 SU(2) 后单条 trace 会变、Fierz/skein 关系成立 2e-16——U(1) 种子 → SU(2) 相对链接，为什么 SU(2) 的第二张脸） |
-| **群交换子 L**（exp_group_commutator） | **pass + 边界**（$L=1-\frac12\mathrm{Tr}([W_1,W_2])$：U(1) 恒 0、SU(2) 非 0（均值 0.748）——但 L 是「非对易」度量不是「链接数」，2D/3D 都非零，链接数需 Jones 多项式） |
-| **辫子 R 矩阵**（exp_yang_baxter） | **pass**（SU(2) R 矩阵满足 QYBE + braid 关系（2.5e-16），本征值 $3\oplus 1$——交叉 → 辫群的第一块砖，Yang–Baxter = 「不分先后」） |
+| **群交换子 L**（exp_group_commutator） | **pass + 边界**（L=1−½Tr([W₁,W₂])：U(1) 恒 0、SU(2) 非 0（均值 0.748）——但 L 是「非对易」度量不是「链接数」，2D/3D 都非零，链接数需 Jones 多项式） |
+| **辫子 R 矩阵**（exp_yang_baxter） | **pass**（SU(2) R 矩阵满足 QYBE + braid 关系（2.5e-16），本征值 3⊕1——交叉 → 辫群的第一块砖，Yang–Baxter = 「不分先后」） |
 | **Jones 多项式**（exp_jones） | **pass**（Kauffman + writhe 区分平凡链接(2D) vs Hopf 链接(3D)：V(trivial)=-1.73 vs V(Hopf)=i——一个可算量区分 2D/3D） |
-| **配对 ↔ 辫子交叉**（exp_pairing_to_braid） | **pass**（skein：交叉=配对{1,e}的量子叠加 $\sigma=A\cdot 1+A^{-1}e$，正负=系数 $A\leftrightarrow A^{-1}$ 互换；R 本征值 $3\oplus 1$=通道非正负；纯 FPL 构型 $Kauffman=d^{c-1}$ 只依赖闭合弦数——补上「配对→交叉」这一概念缺口的精确版） |
+| **配对 ↔ 辫子交叉**（exp_pairing_to_braid） | **pass**（skein：交叉=配对{1,e}的量子叠加 σ=A·1+A⁻¹·e，正负=系数 A↔A⁻¹ 互换；R 本征值 3⊕1=通道非正负；纯 FPL 构型 Kauffman=d^{c−1} 只依赖闭合弦数——补上「配对→交叉」这一概念缺口的精确版） |
 | **辫子词 → Jones**（exp_braid_word_to_jones） | **pass**（正向闭环：辫子词→skein→配对→Markov迹(数圈)→Kauffman→Jones；Hopf/Trefoil/Figure-8 对教科书值，R-II/R-III 不变性成立——B 路线第二~四步的正向链） |
-| **A 从哪来（量子化开关）**（exp_quantization_condition） | **pass（边界澄清）**（经典自洽不固定 $A$——任意 $A\neq 0$ 都满足 $R\cdot R^{-1}=I$，$A$ 是自由参数；量子化=单位根 $q^{k+2}=1$ 才固定 $A$，此时 $-d=A^2+A^{-2}$=量子维度（$k=1\to 1.732<2$），经典极限 $k\to\infty$ 恢复 2——第三层唯一剩下的开关 = 量子相干，非经典自洽能推出） |
-| **量子化真正来自 Jones-Wenzl 截断**（exp_jones_wenzl） | **pass（机制澄清）**（Hecke 关系对任意 $q$ 自洽、不逼出单位根；逼出单位根的是 Jones-Wenzl 幂等元存在性——Chebyshev 量子维度 $\Delta_n$ 在 $\delta=-2\cos\!\left(\frac{\pi}{k+2}\right)$ 时 $\Delta_{k+1}=0$，$f_{k+2}$ 消失 = SU(2)_k 截断。「绕自己一圈不多不少」（$f_n^2=f_n$）才是「整个一不能看出破绽」的精确数学形式） |
-| **关系自指 → 拓扑自指（桥的性质）**（exp_relation_to_topology） | **pass（边界澄清）**（厄米 $D_{ij}=D_{ji}^*$ 的谱投影 $P_k$ 自动幂等 $P_k^2=P_k$——"关系→拓扑"的免费桥（谱定理），但只给 $\{0,1\}$ 平凡投影，不给量子化；量子化=单位根需额外截断 $\Delta_{k+1}=0$（Chebyshev 零点），厄米性推不出——第三层墙 = 第二个付费桥） |
-| **有限 N → 单位根（量子化桥）**（exp_finite_quantization） | **pass（数学恒等式）**（N 条最大弦 ⟹ $\delta=2\cos\!\left(\frac{\pi}{N+1}\right)$ 使 $\Delta_{N-1}=1$、$\Delta_N=0$（Chebyshev 零点恒等式，N=3..8 全部精确）⟹ 单位根 ⟹ level $k=N-1$；A_k 结构（N 个自旋 0..k/2）融合规则验证。「有限→量子化」是**证明的数学恒等式**；唯一剩下的开放输入 =「D 用满 N 条弦」= 区分所有节点 = v3 公设「观察=一次有向区分」） |
+| **A 从哪来（量子化开关）**（exp_quantization_condition） | **pass（边界澄清）**（经典自洽不固定 A——任意 A≠0 都满足 R·R⁻¹=I，A 是自由参数；量子化=单位根 q^{k+2}=1 才固定 A，此时 −d=A²+A⁻²=量子维度（k=1→1.732<2），经典极限 k→∞ 恢复 2——第三层唯一剩下的开关 = 量子相干，非经典自洽能推出） |
+| **量子化真正来自 Jones-Wenzl 截断**（exp_jones_wenzl） | **pass（机制澄清）**（Hecke 对任意 q 自洽；Jones-Wenzl 幂等元 f_n²=f_n 存在性逼出截断 Δ_{k+1}=0） |
+| **关系自指 → 拓扑自指（桥的性质）**（exp_relation_to_topology） | **pass（边界澄清）**（厄米 D_{ij}=D_{ji}^* → 谱投影 P_k²=P_k 是免费桥；单位根截断是付费桥） |
+| **有限 N → 单位根（量子化桥）**（exp_finite_quantization） | **pass（数学恒等式）**（N 条最大弦 → δ=2cos(π/(N+1)) → Δ_N=0 → level k=N−1；开放输入=D 用满 N 条弦） |
 | 纯谱 / 3+1 选择 | out of scope |
 
 ## Pass criterion (Exp1)
 
-- $N=6$ 或 $8$；$L_{ij}=\min(|i-j|,N-|i-j|)$（边长 $a=1$）
-- $D$ 从随机厄米起步，不预设图
-- 强边集合贴近环近邻；非近邻边平均 $|z|$ 明显更小
+- N=6 或 8；边长 a=1，目标距离
+
+$$L_{ij}=\min\bigl(|i-j|,\, N-|i-j|\bigr)$$
+
+- D 从随机厄米起步，不预设图
+- 强边集合贴近环近邻；非近邻边平均 |z| 明显更小
 
 ## Exp2 criterion (failed on N=6)
 
@@ -116,14 +122,20 @@ python -m experiments.exp_finite_quantization
 
 ## Exp3 criterion (passed on Nt=Nx=8)
 
-- $D=\gamma^0\otimes D_t+\gamma^1\otimes D_x$，$\gamma^0$ 反对称（$(\gamma^0)^2=-1$）、$\gamma^1$ 对称（$(\gamma^1)^2=+1$），交叉项因反对易相消 $\Rightarrow D^2=-D_t^2+D_x^2$
-- 判据：欧氏（$\gamma$ 全对称）$D^2$ 全非负；洛伦兹（$\gamma^0$ 反对称）$D^2$ 正负对称（不定，号差 $(-,+)$），且有零本征值（光锥）
+- Dirac 结构（γ⁰ 反对称、γ¹ 对称，交叉项相消）：
+
+$$D=\gamma^0\otimes D_t+\gamma^1\otimes D_x,\quad(\gamma^0)^2=-1,\quad (\gamma^1)^2=+1,\quad D^2=-D_t^2+D_x^2$$
+
+- 判据：欧氏（γ 全对称）时 D² 全非负；洛伦兹（γ⁰ 反对称）时 D² 正负对称（不定，号差 (−,+)），且有零本征值（光锥）
 
 ## Exp4 criterion (passed on N=400, xi=10)
 
-- 1D Dirac 算子 $D=$ 动能（$-i\sigma_x\partial_x$ 虚反对称）+ 质量 $m(x)\sigma_z$，畴壁 $m(x)=m_0\tanh((x-x_0)/\xi)$
+- 1D Dirac 算子：动能项 −iσ_x ∂_x（虚反对称）+ 质量项 m(x)σ_z；畴壁 m(x)=m₀ tanh((x−x₀)/ξ)
+
+$$D = -i\sigma_x \partial_x + m(x)\sigma_z$$
+
 - 判据：均匀质量（绕数 0）→ 0 零模、有能隙；畴壁（绕数 1）→ 2 零模局域在畴壁（E≈1e-18）
-- 零模数 = 绕数 × 2（朴素格点 Dirac 的费米子加倍）；这是 Jackiw-Rebbi / 指标定理的最小版：**拓扑荷 → 零模（= 拓扑缺陷 → 粒子）**
+- 零模数 = 绕数 × 2（费米子加倍）；Jackiw–Rebbi / 指标定理最小版：**拓扑荷 → 零模（= 拓扑缺陷 → 粒子）**
 
 ## Exp5 criterion (passed): 2D 陈数 → 零模（量子霍尔）
 
@@ -145,11 +157,11 @@ $$D=\begin{pmatrix}0&z\\ w&0\end{pmatrix}$$
 
 平方 $D^2=zw\cdot I$，本征值就是 $zw$。三种写法：
 
-| 耦合 | 矩阵元 | 厄米 | $D$ 本征值 | $zw$ | $D^2$ | 号差 |
+| 耦合 | 矩阵元 | 厄米 | D 本征值 | zw | D² | 号差 |
 |---|---|---|---|---|---|---|
-| 对称（空间无向） | $D_{12}=D_{21}=a$ | 厄米 | $\pm a$ | $a^2>0$ | 正定 | $+$ |
-| 虚耦合（时间厄米） | $D_{12}=-D_{21}^*=ia$ | 厄米 | $\pm a$ | $a^2>0$ | 正定 | 无 |
-| 反对称（时间有向） | $D_{12}=-D_{21}=a$ | **非厄米** | $\pm ia$ | $-a^2<0$ | **负定** | $-$ |
+| 对称（空间无向） | D_{12}=D_{21}=a | 厄米 | ±a | a²>0 | 正定 | + |
+| 虚耦合（时间厄米） | D_{12}=-D_{21}^{\ast}=ia | 厄米 | ±a | a²>0 | 正定 | 无 |
+| 反对称（时间有向） | D_{12}=-D_{21}=a | **非厄米** | ±ia | −a²<0 | **负定** | − |
 
 厄米 $=$ $w=\overline z$，于是 $zw=|z|^2\ge0$：无论 $z$ 实还是虚，$D^2$ 恒正定。唯一让 $D^2$ 变负的是 $w=-z$（实、反对称、不取共轭），此时 $D$ 非厄米（$D^\dagger=-D$）。
 
@@ -169,23 +181,23 @@ $$\mathrm{Tr}(D^4)=16\cdot\tfrac18\cdot 3n=6n\quad(=36,\ n=6)$$
 
 ## 闭合环磁通项（Exp1 v2 / v3 / v4，2026-09-01）
 
-把「相位 = 规范联络」落成第一个对相位敏感的作用量项。动机：Exp2 已证谱矩 $\mathrm{Tr}(D^{2m})$ 对相位盲，故改走闭合环磁通 $\Phi_{ijk}=\phi_{ij}+\phi_{jk}-\phi_{ik}$（格点规范理论的威尔逊环），用复数乘积算 $\sin\Phi$ 避开 arg 分支切割。
+把「相位 = 规范联络」落成第一个对相位敏感的作用量项。动机：Exp2 已证谱矩 Tr(D^{2m}) 对相位盲，故改走闭合环磁通 Φ_{ijk}=φ_{ij}+φ_{jk}−φ_{ik}（格点规范理论的威尔逊环），用 sin Φ 避开 arg 分支切割。
 
-**Exp1 v2**（`exp1_v2_flux.py`）：作用量加 $\mu\sum_{i<j<k}\sin^2\Phi_{ijk}$。结果：flux 惩罚把磁通从随机（~9.4）压到 0，但相位**没有**变实矩阵——它压到了「$0$ 或 $\pi$ 磁通」（Z₂ 通量态）。铁证：$\overline{\cos\Phi} = 1 - 2\,\mathrm{pi\_frac}$ 精确成立（4 个种子全对），说明每个三角形磁通是二值的（$0$/$\pi$）。
+**Exp1 v2**（`exp1_v2_flux.py`）：作用量加 μ·Σ_{i<j<k} sin²Φ_{ijk}。结果：flux 惩罚把磁通从随机（~9.4）压到 0，但相位**没有**变实矩阵——它压到了「0 或 π 磁通」（Z₂ 通量态）。铁证：mean(cos Φ) = 1 − 2·pi_frac 精确成立（4 个种子全对），说明每个三角形磁通是二值的（0/π）。
 
-**Exp1 v3**（`exp1_v3_flux_compare.py`）：对比三种曲率定义 $F$，结论是「曲率项的定义决定磁通有序化到哪个零点」：
+**Exp1 v3**（`exp1_v3_flux_compare.py`）：对比三种曲率定义 F，结论是「曲率项的定义决定磁通有序化到哪个零点」：
 
 | 曲率 F | 零点 | 收敛到的磁通 |
 |---|---|---|
-| $\sin\Phi$ | $0$ 和 $\pi$ | Z₂ 通量（$0$/$\pi$ 简并） |
-| $|e^{i\Phi}-1|$ | 只有 $0$ | 零磁通（实矩阵） |
-| $\cos\Phi$ | $\pm \frac{\pi}{2}$ | 全三角形 $\pm \frac{\pi}{2}$ 最大磁通（quarter_frac=1.0） |
+| sin Φ | 0 和 π | Z₂ 通量（0/π 简并） |
+| abs(e^{iΦ}−1) | 只有 0 | 零磁通（实矩阵） |
+| cos Φ | ±π/2 | 全三角形 ±π/2 最大磁通（quarter_frac=1.0） |
 
-**Exp1 v4**（`exp1_v4_mcmc.py`）：Metropolis-Hastings 采样 $e^{-\beta S}$（**经典热**，不是量子）。结果：温度驱动磁通有序化（flux 从高温 ~9.5 随机 → 低温 ~0.5 冻结到 $0$/$\pi$），高温 pi_frac≈1/3 精确等于均匀磁通下 $\cos\Phi<-0.5$ 的概率；但 Z₂ 简并**未被热涨落打破**（低温跨种子 pi_frac≈0.5，无偏好）。已知坑：$\beta=10$ 步长 0.3 太大、accept≈0（未充分热化）；判据曾把 0.5 当随机基准（实为 1/3），主结论不变。
+**Exp1 v4**（`exp1_v4_mcmc.py`）：Metropolis-Hastings 采样 e^{−βS}（**经典热**，不是量子）。结果：温度驱动磁通有序化（flux 从高温 ~9.5 随机 → 低温 ~0.5 冻结到 0/π），高温 pi_frac≈1/3 精确等于均匀磁通下 P(cos Φ < −0.5) 的概率；但 Z₂ 简并**未被热涨落打破**（低温跨种子 pi_frac≈0.5，无偏好）。已知坑：β=10 步长 0.3 太大、accept≈0（未充分热化）；判据曾把 0.5 当随机基准（实为 1/3），主结论不变。
 
 **核心结论（负结果，两个钉子）**：
 1. 经典曲率惩罚**不能生成**非平凡拓扑——它只把磁通抹平到 F 的零点；哪个磁通被允许由 F 的定义决定，不由物理偏好决定。
-2. 经典热涨落**不能打破** Z₂ 简并——打破 $0$/$\pi$ 简并 → SU(2)，需要量子相干（$e^{iS}$）或额外对称破缺，不是热。
+2. 经典热涨落**不能打破** Z₂ 简并——打破 0/π 简并 → SU(2)，需要量子相干（e^{iS}）或额外对称破缺，不是热。
 
 > 这排除了「设计经典作用量让 SU(2)/Hopf 拓扑自发涌现」这条路，把「为什么 SU(2)」的答案从「作用量」推向「拓扑荷守恒/量子化」（= B4 迹反常 + 弦网凝聚）。已同步记入 vault 的《涌现时空模型：后续可证明与扩展方向》（排除的错路）与《字典观测点》（记录表）。
 
@@ -404,7 +416,7 @@ $$\mathrm{Tr}(D^4)=16\cdot\tfrac18\cdot 3n=6n\quad(=36,\ n=6)$$
 
 **结果**：$Q_{wilson}=Q_{direct}$ 精确相等（arg 0.172388），5 万步重连后偏差 $4\times10^{-15}$（浮点 0）——**严格不变**。
 
-**链条**：$D_{ij}=D_{ji}^*\Rightarrow U_{ij}=e^{i\theta_{ij}}\Rightarrow W(C)\Rightarrow Q$。这是纯图 D 上第一个「D 自己的拓扑不变量」（局部规范不变、重连守恒、不预设空间），是拓扑荷的**种子**（整体相位守恒），Hopf/链接（相对相位）是下一步。
+**链条**：$D_{ij}=D_{ji}^{\ast}\Rightarrow U_{ij}=e^{i\theta_{ij}}\Rightarrow W(C)\Rightarrow Q$。这是纯图 D 上第一个「D 自己的拓扑不变量」（局部规范不变、重连守恒、不预设空间），是拓扑荷的**种子**（整体相位守恒），Hopf/链接（相对相位）是下一步。
 
 ## SU(2) Wilson 环：相对链接（exp_su2_wilson，2026-09-04）
 
@@ -468,7 +480,7 @@ $$\mathrm{Tr}(D^4)=16\cdot\tfrac18\cdot 3n=6n\quad(=36,\ n=6)$$
 
 `experiments/exp_quantization_condition.py`——交叉振幅 $A$（$\sigma=A\cdot1+A^{-1}e$）是自由参数还是被自洽逼出？
 
-**结果**：① 经典自洽不固定 A——任意 $A \neq 0$ 都满足 $R\cdot R^{-1}=I$（数值 1e-16），$A$ 是自由参数；② 量子化 = 单位根 $q^{k+2}=1$ 才固定 $A=q^{1/4}$，此时 $-d=A^2+A^{-2}=2\cos\!\left(\frac{\pi}{2(k+2)}\right)$ = 量子维度（k=1→1.732<2）；③ 经典极限 k→∞ 恢复 2。
+**结果**：① 经典自洽不固定 A——任意 $A \neq 0$ 都满足 $R\cdot R^{-1}=I$（数值 1e-16），$A$ 是自由参数；② 量子化 = 单位根 $q^{k+2}=1$ 才固定 $A=q^{1/4}$，此时 $-d=A^2+A^{-2}=2\cos\!\left(\frac{\pi}{2(k+2)}\right)$ = 量子维度（$k=1 \to 1.732 \lt 2$）；③ 经典极限 $k \to \infty$ 恢复 2。
 
 **意义**：$-d=A^2+A^{-2}$ 才是量子维度（**不是 $A$ 本身**）；$A$ 是自由参数，量子化（单位根）是**物理输入**，不能从经典自洽长出。第三层唯一剩下的开关 = 量子相干。
 
@@ -482,7 +494,7 @@ $$\mathrm{Tr}(D^4)=16\cdot\tfrac18\cdot 3n=6n\quad(=36,\ n=6)$$
 
 ## 关系自指 → 拓扑自指（exp_relation_to_topology，2026-09-05）
 
-`experiments/exp_relation_to_topology.py`——$D_{ij}=D_{ji}^*$（关系自指/厄米）能否推出 $f^2=f$（拓扑自指/幂等）？
+`experiments/exp_relation_to_topology.py`——$D_{ij}=D_{ji}^{\ast}$（关系自指/厄米）能否推出 $f^2=f$（拓扑自指/幂等）？
 
 **结果**：① 厄米 $D$ 的谱投影 $P_k=q_kq_k^\dagger$ **自动幂等**（$|P_k^2-P_k|\sim10^{-16}$，本征值 $\{0,1\}$）= 谱定理，白送；② 两步分解——厄米→投影（免费/可推导），投影→单位根截断（付费/额外）；③ 截断 $\Delta_{k+1}=0$ 是 Chebyshev 零点（额外条件）。
 
