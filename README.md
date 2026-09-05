@@ -386,7 +386,7 @@ $$\mathrm{Tr}(D^4)=16\cdot\tfrac18\cdot 3n=6n\quad(=36,\ n=6)$$
 
 `experiments/exp_phase_connection.py`——把 $D$ 的相位 $e^{i\theta_{ij}}=D_{ij}/|D_{ij}|$ 当离散 U(1) 联络，Wilson 环 / 面通量当拓扑对象（接 Exp6a 的 emergent 规范场 $A$）。
 
-**结果**：3×3 网格 4 个面，极小化麦克斯韦项 $S_{\text{top}}=-\sum_p\cos\Phi_p$ → 面通量全部落到 0 mod 2π（平坦）、$S_{\text{top}}$ 打到下界 $-\#faces$。
+**结果**：3×3 网格 4 个面，极小化麦克斯韦项 $S_{\text{top}}=-\sum_p\cos\Phi_p$ → 面通量全部落到 0 mod 2π（平坦）、$S_{\text{top}}$ 打到下界 $-N_{\mathrm{faces}}$（= 负的面数，此处 $-4$）。
 
 **结论**：① 相位当联络是对的（「拓扑荷从相位里长，不从配对里硬找」= 第三层正确答案）；② 但面通量是**阿贝尔 U(1) 曲率 = 麦克斯韦项，极小化到平坦/平庸**，不逼出拓扑。→ **拓扑荷 = 相位的 U(1) 曲率（平坦）+ 非阿贝尔 Hopf/链接（三维），后者才是「选三维」的来源**（Exp6a 已碰 odd Chern-Simons/链接）。
 
