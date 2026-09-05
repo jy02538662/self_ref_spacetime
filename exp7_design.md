@@ -1,79 +1,100 @@
-# Exp7 扩展版设计：无预设聚类，验证 SU(2) 从 D 自发涌现
+# Exp7 Design: Spontaneous Clustering / SU(2) from $D$
 
-> 记录日期：2026-09-01 ｜ 状态：设计稿（待写代码） ｜ 对应 [[字典观测点]] 八号种子的"强命题"攻关方向
+> **Status**: design draft (code not written) · 2026-09-01  
+> **Place**: strong-proposition probe only — core claims of this repo do **not** depend on Exp7  
+> **Related**: vault「字典观测点」八号种子
 
-## 一、目标
+---
 
-**不预设自旋、不预设簇划分**，让 $N$ 个无差别纯态在作用量极小化下，自发形成"每簇 $k$ 个态"的结构。核心检验：**$k=2$（对应 SU(2) 自旋）是否自发成为主导结构**。
+## Goal
 
-这是强命题"内部对称性不是输入，是 D 自发组织的产物"的**数值证据**（不是解析证明）。
+Do **not** preset spins or cluster partitions. Let $N$ indistinguishable pure states, under action minimization, spontaneously form “$k$ states per cluster”. The core check:
 
-## 二、作用量形式
+> Does **$k=2$** (SU(2) spin) spontaneously dominate?
 
-保留 Exp1 的自指作用量骨架：
+This would be **numerical evidence** for “internal symmetry is an output of $D$, not an input” — not an analytic proof.
 
-$$S[D] = \mathrm{Tr}(D^2) + \lambda_1 \sum_{i \lt j} \big(d_{ij} - L_{ij}\big)^2$$
+---
 
-- $\mathrm{Tr}(D^2)$：耦合成本（倾向少、弱耦合）；
-- 几何项：要求 D 生成的自指距离 $d_{ij}$ 匹配目标 $L_{ij}$。
+## Action skeleton
 
-**关键难点：目标 $L_{ij}$ 怎么"不预设簇划分"地定义。** 两个方案：
+Keep Exp1’s self-referential skeleton:
 
-### 方案 1（能直接编码，但弱预设了簇数）
+$$
+S[D]=\mathrm{Tr}(D^{2})+\lambda_{1}\sum_{i<j}\bigl(d_{ij}-L_{ij}\bigr)^{2}
+$$
 
-- 取 $N = 2M$ 个态，目标几何是 $M$ 个点（一维环或二维方格），几何距离 $L^{\rm geom}_{ab}$（$a,b=1..M$）；
-- 把 $N$ 个态**随机**分成 $M$ 块（每块 2 个态），块内 $L_{ij}=0$（同一几何点），块间 $L_{ij}=L^{\rm geom}$；
-- 作用量极小化后，看 D 是否"保持"这个 2 态簇结构（簇内耦合远强于簇间）。
+- $\mathrm{Tr}(D^{2})$: coupling cost (favors fewer / weaker links)
+- Geometric term: self-ref distances $d_{ij}$ should match targets $L_{ij}$
 
-**意义**：验证"2 态簇 = SU(2)"这个结构本身是否是 D 的稳定解。
-**局限**：预设了"每块 2 态"，不是真正的"k=2 自发涌现"。
+**Hard point**: define $L_{ij}$ **without** presupposing a cluster partition.
 
-### 方案 2（真无预设，需要探索）
+### Scheme 1 — implementable, weakly presupposes $k=2$
 
-- 目标 $L_{ij}$ 是"秩 M 的低秩距离矩阵"（$M$ 点几何距离的某种提升），但**提升方式（哪些态归哪个簇）由 D 自组织**；
-- 实现思路：用软分配 / 最优传输，让簇标签 $c_i$ 由 D 当前的 $d_{ij}$ 决定（比如每步对 $d_{ij}$ 做谱聚类，把当前聚类结果当作 $c_i$，再算 $L_{ij}=L^{\rm geom}_{c_i c_j}$）；
-- 迭代极小化，看最终簇大小分布是否收敛到 $k=2$。
+- Take $N=2M$ states; target geometry is $M$ points (1D ring or 2D grid) with distances $L^{\mathrm{geom}}_{ab}$
+- Randomly partition the $N$ states into $M$ blocks of size 2; within a block $L_{ij}=0$; between blocks $L_{ij}=L^{\mathrm{geom}}_{c_i c_j}$
+- After minimization, check whether $D$ keeps 2-state clusters (intra-cluster $|z|$ ≫ inter-cluster)
 
-**意义**：真正检验"k=2 自发涌现"。
-**局限**：实现复杂，谱聚类/软分配的细节需要探索。
+**Pros**: tests whether “2-state cluster = SU(2)” is a stable solution of $D$.  
+**Cons**: presupposes block size 2 — not true spontaneous $k=2$.
 
-## 三、聚类检验指标
+### Scheme 2 — truly unpresupposed (needs exploration)
 
-极小化结束后，对 $d_{ij}$（或耦合矩阵 $|D|$）做无监督分析：
+- $L_{ij}$ is a rank-$M$ low-rank lift of an $M$-point geometry, but the lift (which states share a cluster) is organized by $D$
+- Soft assignment / OT: cluster labels $c_i$ from current $d_{ij}$ each step (e.g. spectral clustering), then $L_{ij}=L^{\mathrm{geom}}_{c_i c_j}$
+- Iterate; check whether cluster-size distribution converges to $k=2$
 
-1. **簇内/簇间耦合强度比**：$\dfrac{\text{簇内 }|z|\text{ 均值}}{\text{簇间 }|z|\text{ 均值}} \gt 10^3$（强耦合判据）；
-2. **簇大小分布**：对 $d_{ij}$ 做 k-means 或谱聚类，统计每个簇的态数，看 $k=2$ 是否占比最高；
-3. **轮廓系数**（silhouette score）：聚类质量 $\gt 0.9$；
-4. **泡利分解**（方案 1 成立后）：对每个 2 态簇的 $2\times2$ 约化耦合矩阵做泡利分解，看三个 $\sigma$ 分量是否可连续调节（对应自旋方向自由度）。
+**Pros**: genuine spontaneous-$k$ test.  
+**Cons**: implementation details of soft assignment need exploration.
 
-## 四、结果判定标准
+---
 
-| 结果 | 判定 |
-|---|---|
-| $k=2$ 簇占比最高、能量最低 | ✅ SU(2) 自发涌现，强命题有数值证据 |
-| 出现 $k=1$（无内部结构）主导 | 经典情形下 $k=1$ 能量更低，需加量子涨落/零点能修正 |
-| 出现 $k\ge3$ 主导 | 强命题不成立（k=2 不是稳定解），或需要拓扑项约束 |
-| 簇大小不收敛/随机 | 作用量不足，需加约束项 |
+## Clustering diagnostics (post-min)
 
-## 五、开放点（待探索）
+On $d_{ij}$ or $|D|$:
 
-1. **方案 2 的实现**（真无预设的软分配/谱聚类迭代）；
-2. **量子涨落修正**：加入零点能修正项（对应"动力学稳定性"那个 $E\propto k(k-1)-c\sqrt{k}$ 的猜测，注意 $\sqrt{k}$ 标度未证实），看是否让 $k=2$ 变稳定；
-3. **拓扑项**：加入拓扑约束，看是否让 $k=2$ 成为"最小不可约拓扑单元"（注意"k≥3 拓扑荷可分数值"这个论证已被判定为错，需另找依据）。
+1. **Intra / inter coupling ratio**:
+   $$\frac{\mathrm{mean}\,|z|_{\mathrm{intra}}}{\mathrm{mean}\,|z|_{\mathrm{inter}}}>10^{3}$$
+2. **Cluster-size histogram**: $k$-means or spectral clustering on $d_{ij}$; does size $k=2$ dominate?
+3. **Silhouette score** $>0.9$
+4. **Pauli decomposition** (after Scheme 1 holds): for each $2\times 2$ reduced block, expand in $\{I,\sigma_x,\sigma_y,\sigma_z\}$ and check whether the three $\sigma$ components are continuously tunable (spin direction)
 
-## 六、诚实定位
+---
 
-- Exp7 扩展版能做的，是**数值证据**，不是解析证明；
-- "为什么一定是 $k=2$"等价于"为什么自旋是 1/2"，是深层基础问题，非最小模型必须回答；
-- 核心贡献（同一 D 生成距离 + 号差 + 拓扑）**已成立，不依赖强命题**；强命题是锦上添花。
+## Verdict table
 
-## 七、代码骨架（复用现有 src/）
+| Outcome | Verdict |
+|---------|---------|
+| $k=2$ most frequent and lowest energy | ✅ SU(2) spontaneous; strong prop has numeric support |
+| $k=1$ (no internal structure) dominates | Classical $k=1$ cheaper; need ZPE / fluctuation correction |
+| $k\ge 3$ dominates | Strong prop fails (or needs topo constraint) |
+| Sizes do not converge / look random | Action insufficient; add constraints |
+
+---
+
+## Open points
+
+1. Scheme 2 soft-assignment / spectral iteration
+2. Quantum fluctuation / ZPE correction of the form $E\propto k(k-1)-c\sqrt{k}$ (note: $\sqrt{k}$ scaling **unverified**)
+3. Topological constraint making $k=2$ the minimal irreducible unit (the old “$k\ge 3$ topo charge fractionalizes” argument was judged **wrong** — need another reason)
+
+---
+
+## Honest placement
+
+- Exp7 can only deliver **numeric evidence**, not an analytic proof of “why $k=2$”
+- “Why spin-$1/2$” is a deep foundational question; the minimal model need not answer it
+- Core contribution of this repo (same $D$ → distance + signature + topology) **already stands without** the strong proposition
+
+---
+
+## Code skeleton (reuse `src/`)
 
 ```
 experiments/exp7_clustering.py
-  - 方案1：N=2M 态 + 随机分块目标 L + minimize_action（复用 src/optimize.py）
-  - 聚类分析：sklearn.cluster（KMeans / SpectralClustering）+ silhouette_score
-  - 泡利分解：对每个 2 态簇的 2x2 矩阵分解为 I, sigma_x, sigma_y, sigma_z
+  - Scheme 1: N=2M + random block L + minimize_action (src/optimize.py)
+  - Clustering: sklearn KMeans / SpectralClustering + silhouette_score
+  - Pauli: expand each 2×2 block in I, σx, σy, σz
 ```
 
-依赖：现有 `requirements.txt`（numpy, scipy）+ `scikit-learn`（聚类）。
+Deps: existing `requirements.txt` (`numpy`, `scipy`) + `scikit-learn` for clustering.
