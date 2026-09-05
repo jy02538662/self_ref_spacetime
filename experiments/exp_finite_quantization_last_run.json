@@ -1,0 +1,5 @@
+{
+  "chebyshev_identity_holds": true,
+  "level_k_equals_N_minus_1": true,
+  "note": "N maximal strands -> delta=2cos(pi/(N+1)) = root of unity (math identity); the open input is that D uses all N strands."
+}

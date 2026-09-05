@@ -1,0 +1,11 @@
+{
+  "classical_A_is_free": true,
+  "quantum_dimension_minus_d": {
+    "1": 1.732051,
+    "2": 1.847759,
+    "3": 1.902113,
+    "4": 1.931852,
+    "5": 1.949856
+  },
+  "note": "A is a free classical parameter; quantization = root of unity (q^{k+2}=1); -d = A^2+A^{-2} = quantum dimension; k->inf recovers classical dim 2."
+}

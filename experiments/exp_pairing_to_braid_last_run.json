@@ -1,0 +1,19 @@
+{
+  "k": 1,
+  "A": [
+    0.96592583,
+    0.25881905
+  ],
+  "d": [
+    -1.73205081,
+    -0.0
+  ],
+  "skein_consistent": true,
+  "e2_minus_de": 0.0,
+  "RRinv_minus_I": 0.0,
+  "eigenvalue_multiplicities": {
+    "A": 3,
+    "antisym": 1
+  },
+  "note": "pairing -> {1,e}; crossing = A*1 + A^{-1}*e (superposition); sign = amplitude ratio; eigenvalues = channels."
+}

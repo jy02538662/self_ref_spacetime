@@ -1,0 +1,44 @@
+{
+  "N": 200,
+  "Ls": [
+    10,
+    20,
+    40,
+    80,
+    100
+  ],
+  "results": {
+    "chain": {
+      "S": {
+        "10": 0.8459,
+        "20": 0.9667,
+        "40": 1.0776,
+        "80": 1.1593,
+        "100": 1.1677
+      },
+      "law": "area(log)"
+    },
+    "random_graph_p0.3": {
+      "S": {
+        "10": 6.7446,
+        "20": 12.7887,
+        "40": 23.3463,
+        "80": 36.7987,
+        "100": 38.6145
+      },
+      "law": "volume(linear)"
+    },
+    "random_graph_p0.5": {
+      "S": {
+        "10": 6.6297,
+        "20": 12.7158,
+        "40": 23.442,
+        "80": 36.897,
+        "100": 38.9049
+      },
+      "law": "volume(linear)"
+    }
+  },
+  "area_law_is_locality_signature": true,
+  "note": "long-range hopping 1/r^alpha is still translation-invariant (Fermi surface) -> area law; non-locality (volume law) needs a random graph (no Fermi surface)."
+}

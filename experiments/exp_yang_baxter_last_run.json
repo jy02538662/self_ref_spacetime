@@ -1,0 +1,19 @@
+{
+  "qybe_max_error": {
+    "1": 2e-16,
+    "2": 1e-16,
+    "3": 2e-16,
+    "4": 1e-16,
+    "5": 2e-16
+  },
+  "qybe_holds": true,
+  "braid_max_error": {
+    "1": 2e-16,
+    "2": 1e-16,
+    "3": 2e-16,
+    "4": 1e-16,
+    "5": 2e-16
+  },
+  "braid_holds": true,
+  "note": "SU(2) R-matrix satisfies QYBE and the braid relation; reduced 2x2 = diagonalized form on 2(x)2=3(+)1."
+}

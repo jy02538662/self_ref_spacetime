@@ -1,0 +1,7 @@
+{
+  "SU2_L_mean": 0.7481,
+  "SU2_L_std": 0.5197,
+  "SU2_fraction_nonzero": 1.0,
+  "U1_max_L": 0.0,
+  "note": "L = non-commutativity measure: 0 for abelian, non-zero for non-abelian; NOT a linking number (2D/3D needs Jones/embedding)."
+}

@@ -1,0 +1,5 @@
+{
+  "checks_passed": true,
+  "n_checks": 21,
+  "note": "braid word -> skein -> pairing -> Markov trace -> Kauffman/Jones (forward closure); Hopf/Trefoil/Figure-8/R-II verified."
+}

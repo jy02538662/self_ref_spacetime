@@ -1,0 +1,5 @@
+{
+  "spectral_projectors_idempotent": true,
+  "truncation_is_chebyshev_zero": true,
+  "note": "Hermiticity -> idempotent projectors (trivial, spectral theorem); root of unity needs the EXTRA truncation Delta_{k+1}=0 (Chebyshev zero)."
+}

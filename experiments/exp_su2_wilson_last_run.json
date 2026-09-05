@@ -1,0 +1,18 @@
+{
+  "N": 30,
+  "n_loops_initial": 4,
+  "initial_traces": [
+    -1.5931,
+    -0.3242,
+    1.462,
+    -0.715,
+    -0.5095,
+    -0.4211,
+    -0.3759,
+    -0.5126
+  ],
+  "traces_change_under_reconnection": true,
+  "skein_identity_max_err": 0.0,
+  "skein_identity_holds": true,
+  "note": "SU(2) non-abelian -> relative linking (skein/Jones), not the U(1) single-number seed Q."
+}

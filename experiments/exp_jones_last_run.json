@@ -1,0 +1,83 @@
+{
+  "kauffman_trivial_vs_hopf_differ": true,
+  "jones_trivial_vs_hopf_differ": true,
+  "values": [
+    {
+      "k": 1,
+      "kauffman_trivial": [
+        -1.7321,
+        -0.0
+      ],
+      "kauffman_hopf": [
+        -1.0,
+        -0.0
+      ],
+      "jones_trivial": [
+        -1.7321,
+        -0.0
+      ],
+      "jones_hopf": [
+        -0.0,
+        1.0
+      ]
+    },
+    {
+      "k": 2,
+      "kauffman_trivial": [
+        -1.8478,
+        0.0
+      ],
+      "kauffman_hopf": [
+        -1.4142,
+        0.0
+      ],
+      "jones_trivial": [
+        -1.8478,
+        0.0
+      ],
+      "jones_hopf": [
+        -0.5412,
+        1.3066
+      ]
+    },
+    {
+      "k": 3,
+      "kauffman_trivial": [
+        -1.9021,
+        -0.0
+      ],
+      "kauffman_hopf": [
+        -1.618,
+        -0.0
+      ],
+      "jones_trivial": [
+        -1.9021,
+        -0.0
+      ],
+      "jones_hopf": [
+        -0.9511,
+        1.309
+      ]
+    },
+    {
+      "k": 4,
+      "kauffman_trivial": [
+        -1.9319,
+        0.0
+      ],
+      "kauffman_hopf": [
+        -1.7321,
+        0.0
+      ],
+      "jones_trivial": [
+        -1.9319,
+        0.0
+      ],
+      "jones_hopf": [
+        -1.2247,
+        1.2247
+      ]
+    }
+  ],
+  "note": "Jones polynomial distinguishes trivial (2D) from Hopf (3D) link; braid-closure trace = Kauffman bracket, Jones needs writhe (-A)^{-3w}."
+}

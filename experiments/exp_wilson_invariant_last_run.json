@@ -1,0 +1,15 @@
+{
+  "N": 30,
+  "n_loops_initial": 4,
+  "Q_wilson": [
+    0.98517795,
+    0.17153546
+  ],
+  "Q_direct": [
+    0.98517795,
+    0.17153546
+  ],
+  "max_deviation": 0.0,
+  "invariant": true,
+  "note": "Q = prod W(C) = prod edges e^{i theta} is invariant under reconnection (seed of topological charge)."
+}

@@ -1,0 +1,14 @@
+{
+  "grid": [
+    3,
+    3
+  ],
+  "V": 9,
+  "E": 12,
+  "faces": 4,
+  "initial_S_top": 0.7378,
+  "final_S_top": -4.0,
+  "min_target": -4,
+  "flux_flat": true,
+  "note": "phase=U(1) connection (correct); Maxwell term -> flat (trivial); Hopf/3D = non-abelian Chern-Simons (separate)."
+}
