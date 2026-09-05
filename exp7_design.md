@@ -73,7 +73,7 @@ $$S[D] = \mathrm{Tr}(D^2) + \lambda_1 \sum_{i<j} \big(d_{ij} - L_{ij}\big)^2$$
 experiments/exp7_clustering.py
   - 方案1：N=2M 态 + 随机分块目标 L + minimize_action（复用 src/optimize.py）
   - 聚类分析：sklearn.cluster（KMeans / SpectralClustering）+ silhouette_score
-  - 泡利分解：对每个 2 态簇的 2x2 矩阵分解为 I,σx,σy,σz
+  - 泡利分解：对每个 2 态簇的 2x2 矩阵分解为 I, sigma_x, sigma_y, sigma_z
 ```
 
 依赖：现有 `requirements.txt`（numpy, scipy）+ `scikit-learn`（聚类）。
