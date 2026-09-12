@@ -1,0 +1,20 @@
+{
+  "n4": {
+    "comm_norm": 2.0,
+    "anti_norm": 3.6739403974420594e-16,
+    "holonomy_mean": -1.0,
+    "anticommute": true
+  },
+  "n6": {
+    "comm_norm": 2.0,
+    "anti_norm": 6.123233995736766e-16,
+    "holonomy_mean": -1.0,
+    "anticommute": true
+  },
+  "n8": {
+    "comm_norm": 2.0,
+    "anti_norm": 8.572527594031472e-16,
+    "holonomy_mean": -1.0,
+    "anticommute": true
+  }
+}

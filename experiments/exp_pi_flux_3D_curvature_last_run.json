@@ -1,0 +1,23 @@
+{
+  "N": 64,
+  "L": 4,
+  "curvature": {
+    "xy": {
+      "F_equals_2TuTv": true,
+      "trace_F": 0.0,
+      "norm_F": 16.0
+    },
+    "yz": {
+      "F_equals_2TuTv": true,
+      "trace_F": 0.0,
+      "norm_F": 16.0
+    },
+    "zx": {
+      "F_equals_2TuTv": true,
+      "trace_F": 0.0,
+      "norm_F": 16.0
+    }
+  },
+  "Fxy_squared_scalar_per_sector": true,
+  "note": "F_uv = [T_u,T_v] = 2 T_u T_v (anti-commutation), trace = 0 (SU(2)-like), F_uv^2 = -4 s_u s_v I. So T_mu is a unified object (translation + U(1) flux + SU(2) spin); omega_mu is already built into T_mu. Paid-bridge-2 = SEPARATE the SU(2) from the U(1) (localization), not construct."
+}

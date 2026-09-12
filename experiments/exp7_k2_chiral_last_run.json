@@ -1,0 +1,143 @@
+{
+  "pi_flux_N16": {
+    "chiral_err": 1.3322676295501878e-15,
+    "selfdual": {
+      "all_even": true,
+      "antisym_err": 1.1443916996305594e-16,
+      "orth_err": 0.8299063022099123,
+      "comm_err": 1.889215015009786e-15,
+      "T2_minus1_err": 6.661338147750939e-16
+    },
+    "zero_mode": {
+      "n_zero": 4,
+      "Gamma_evals": [
+        -1.0,
+        -1.0,
+        1.0,
+        1.0
+      ],
+      "verdict": "4×4 Dirac（2 手征正 × 2 手征负）",
+      "n_plus": 2,
+      "n_minus": 2
+    },
+    "dirac_J": {
+      "svals_even_paired": true,
+      "antisym_err": 0.0,
+      "orth_err": 5.724587470723463e-16,
+      "J2_minus1_err": 5.724587470723463e-16,
+      "comm_D_err": 1.7763568394002505e-15,
+      "anti_Gamma_err": 0.0,
+      "dirac_DIII": true
+    }
+  },
+  "pi_flux_N36": {
+    "chiral_err": 3.1086244689504383e-15,
+    "selfdual": {
+      "all_even": true,
+      "antisym_err": 1.2412670766236366e-16,
+      "orth_err": 1.1821907698729468,
+      "comm_err": 1.96120443610154e-15,
+      "T2_minus1_err": 8.886119947416683e-16
+    },
+    "zero_mode": {
+      "n_zero": 0,
+      "Gamma_evals": [],
+      "verdict": "无零模（N≡2 mod 4）"
+    },
+    "dirac_J": {
+      "svals_even_paired": true,
+      "antisym_err": 0.0,
+      "orth_err": 6.661338147750939e-16,
+      "J2_minus1_err": 6.661338147750939e-16,
+      "comm_D_err": 1.942890293094024e-15,
+      "anti_Gamma_err": 0.0,
+      "dirac_DIII": true
+    }
+  },
+  "pi_flux_N64": {
+    "chiral_err": 4.6629367034256575e-15,
+    "selfdual": {
+      "all_even": true,
+      "antisym_err": 1.2662293152120485e-16,
+      "orth_err": 1.1368742142905037,
+      "comm_err": 1.5328517645723044e-15,
+      "T2_minus1_err": 8.465450562766819e-16
+    },
+    "zero_mode": {
+      "n_zero": 4,
+      "Gamma_evals": [
+        -1.0,
+        -1.0,
+        1.0,
+        1.0
+      ],
+      "verdict": "4×4 Dirac（2 手征正 × 2 手征负）",
+      "n_plus": 2,
+      "n_minus": 2
+    },
+    "dirac_J": {
+      "svals_even_paired": true,
+      "antisym_err": 0.0,
+      "orth_err": 7.771561172376096e-16,
+      "J2_minus1_err": 7.771561172376096e-16,
+      "comm_D_err": 3.635980405647388e-15,
+      "anti_Gamma_err": 0.0,
+      "dirac_DIII": true
+    }
+  },
+  "pi_flux_N100": {
+    "chiral_err": 8.43769498715119e-15,
+    "selfdual": {
+      "all_even": true,
+      "antisym_err": 1.1102230246251565e-16,
+      "orth_err": 1.2517147376688778,
+      "comm_err": 1.7928046109382363e-15,
+      "T2_minus1_err": 1.554575760386768e-15
+    },
+    "zero_mode": {
+      "n_zero": 0,
+      "Gamma_evals": [],
+      "verdict": "无零模（N≡2 mod 4）"
+    },
+    "dirac_J": {
+      "svals_even_paired": true,
+      "antisym_err": 0.0,
+      "orth_err": 8.881784197001252e-16,
+      "J2_minus1_err": 8.881784197001252e-16,
+      "comm_D_err": 3.663748070722657e-15,
+      "anti_Gamma_err": 0.0,
+      "dirac_DIII": true
+    }
+  },
+  "pi_flux_N144": {
+    "chiral_err": 8.43769498715119e-15,
+    "selfdual": {
+      "all_even": true,
+      "antisym_err": 9.71445146547012e-17,
+      "orth_err": 1.1957575682272779,
+      "comm_err": 3.3860949097626504e-15,
+      "T2_minus1_err": 7.112366251504908e-16
+    },
+    "zero_mode": {
+      "n_zero": 4,
+      "Gamma_evals": [
+        -1.0,
+        -1.0,
+        1.0,
+        1.0
+      ],
+      "verdict": "4×4 Dirac（2 手征正 × 2 手征负）",
+      "n_plus": 2,
+      "n_minus": 2
+    },
+    "dirac_J": {
+      "svals_even_paired": true,
+      "antisym_err": 0.0,
+      "orth_err": 1.3322676295501878e-15,
+      "J2_minus1_err": 1.3322676295501878e-15,
+      "comm_D_err": 2.5927879489766124e-15,
+      "anti_Gamma_err": 0.0,
+      "dirac_DIII": true
+    }
+  }
+}

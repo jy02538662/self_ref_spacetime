@@ -1,0 +1,10 @@
+{
+  "N": 64,
+  "L": 4,
+  "anticommutator_with_flux": 0.0,
+  "commutator_with_flux": 16.0,
+  "anticommutator_without_flux": 16.0,
+  "commutator_without_flux": 0.0,
+  "su2_is_emergent_from_u1_phase": true,
+  "note": "SU(2) (anti-commutation Cl(3)) is emergent from the U(1) pi-flux phase: stripping the phase kills the SU(2). So SU(2) and U(1) are inseparable inside T_mu; trivial omega_mu = T_mu (unified), but a pure-SU(2) omega_mu does not exist. Non-trivial omega_mu needs a non-trivial topology."
+}

@@ -1,0 +1,7 @@
+{
+  "n": 4,
+  "n_cross_shared_edges": 0,
+  "n_shared_vertices": 1,
+  "discriminator_works": true,
+  "note": "toy: Jones distinguishes trivial(2D) vs Hopf(3D); cycle->braid spontaneous is next (option A)"
+}

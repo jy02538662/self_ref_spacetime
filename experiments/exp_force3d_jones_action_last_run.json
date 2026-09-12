@@ -1,0 +1,13 @@
+{
+  "pi_flux_kramers": true,
+  "mults": [
+    2,
+    4,
+    4,
+    4,
+    2
+  ],
+  "S_link_sigma0": -0.0,
+  "S_link_sigma2": -1.8477590650225737,
+  "note": "emergent SU(2)=updown source; Jones=linking reward; sigma^k still hand-placed (spontaneous readout is next)"
+}

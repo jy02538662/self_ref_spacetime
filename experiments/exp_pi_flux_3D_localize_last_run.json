@@ -1,0 +1,22 @@
+{
+  "N": 64,
+  "L": 4,
+  "n_irreps": 32,
+  "block_basis_unitary": true,
+  "generator_equals_magnetic_translation": {
+    "x": true,
+    "y": true,
+    "z": true
+  },
+  "position_row_PR_mean": {
+    "x": 1.0,
+    "y": 1.0,
+    "z": 1.0
+  },
+  "position_diagonal_fraction": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "note": "The global SU(2) generators equal the magnetic translations T_x,T_y,T_z (identity in position basis). T_i is a shift (fixed-point-free permutation, diagonal fraction 0), NOT a local spin. So pi-flux SU(2) is a momentum SU(2); paid-bridge-2 = momentum SU(2) -> spin SU(2) = spin connection omega_mu."
+}

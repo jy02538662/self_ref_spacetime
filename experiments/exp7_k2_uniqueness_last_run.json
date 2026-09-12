@@ -1,0 +1,10 @@
+{
+  "solutions_a": [
+    -1.0,
+    1.0
+  ],
+  "gamma0_sq_minus1": true,
+  "J0_Tsq_minus1": true,
+  "unification": true,
+  "J2_minus1_without_antisymmetry_not_unique": true
+}

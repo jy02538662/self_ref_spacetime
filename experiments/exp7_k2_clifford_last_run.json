@@ -1,0 +1,7 @@
+{
+  "gamma0_sq_minus1": true,
+  "quaternions_sq_minus1": true,
+  "clifford_max_err": 0.0,
+  "signature_minus_plus_plus_plus": true,
+  "note": "2x2 holds Cl(0,3) not Cl(3,1); completion needs 4x4 Dirac (spin geometry bridge)"
+}

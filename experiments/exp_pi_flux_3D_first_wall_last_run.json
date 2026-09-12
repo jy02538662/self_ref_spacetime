@@ -1,0 +1,17 @@
+{
+  "N": 64,
+  "L": 4,
+  "max_site_projection": 0.0,
+  "site_local_spin_is_zero": true,
+  "diagonal_weight": {
+    "Tx": 0.0,
+    "Ty": 0.0,
+    "Tz": 0.0
+  },
+  "non_zero_entries": {
+    "Tx": 64,
+    "Ty": 64,
+    "Tz": 64
+  },
+  "note": "P_x T_i P_x = 0 exactly: the SU(2) generators are LINK operators (magnetic translations), not SITE operators (local spins). Paid-bridge-2 = link SU(2) -> site SU(2) = Wannier localization with a topological obstruction (Hopf charge)."
+}
