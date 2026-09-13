@@ -83,6 +83,7 @@ Exp2 fail（Tr(D⁴) 对相位盲）；Exp3 pass（号差需 Dirac / 有向结�
 - 正向：辫子词 → Jones；量子化 = JW 截断 / 有限 N Chebyshev
 - 弦网「自指 → SU(2)_k」路线**封存**（已知工具复现）
 - 付费桥 2 精确化：3D π 磁通磁平移生成 Cl(3)，不可约分解证明 SU(2) 在**动量空间**（非实空间局域）
+- 付费桥 2·层 2：q 变形 TL 在图基（loop 模型/非交叉配对）上成立——loop weight = 量子维度 2cos(π/(k+2))；自旋 1/2 张量积只给 δ=2（recoupling 逼 δ²=4）
 
 ---
 
@@ -135,6 +136,27 @@ Exp2 fail（Tr(D⁴) 对相位盲）；Exp3 pass（号差需 Dirac / 有向结�
 | 付费桥2·第一堵墙 | `exp_pi_flux_3D_first_wall` | **正结果（SU(2) 生成元 = link 算子，非 site）** | PₓTᵢPₓ=0 精确（单点投影 = 0），Tᵢ 对角权重 = 0、非零 = N 条边 → 磁平移是 **link 算子**（边），非 site 算子（点）。付费桥 2 = link SU(2) → site SU(2) = Wannier 局域化（拓扑障碍 = Hopf 荷） |
 | 付费桥2·曲率/ω_μ | `exp_pi_flux_3D_curvature` | **正结果（ω_μ 已内建在磁平移里）** | 曲率 F_μν=[T_μ,T_ν]=2T_μ T_ν（反对易，无迹、SU(2)-like），F²=-4s_μ s_ν I。→ T_μ = 平移 + U(1) 磁通 + SU(2) 自旋的**统一**；ω_μ **已内建**，付费桥 2 = **分离**（SU(2) 从 U(1) 拆出并局域化），非「从无到有构造」 |
 | 付费桥2·分离不可分 | `exp_pi_flux_3D_separation` | **正结果（SU(2) 是 U(1) 的涌现，不可分）** | 带磁通 {T_x,T_y}=0（反对易→SU(2)），无磁通 {T_x,T_y}=16（对易→无 SU(2)）。→ SU(2) 是 U(1) 相位的涌现，去掉相位就没有 SU(2)；**纯 SU(2) 的 ω_μ 在 π 磁通里不存在**，非平凡 ω_μ 需换非平凡拓扑体系 |
+| 付费桥2·量子化绕开分离 | `exp_pi_flux_3D_quantum_separation` | **正结果（分离墙是经典墙，量子化绕开）** | 经典 SU(2)（磁平移反对易）依赖磁通（去磁通 $\{T_x,T_y\}$ 0→16）；量子 SU(2)_k（有限 N→δ=2cos(π/(N+1)) Chebyshev 截断）独立于磁通（N=3..8 全验证）。→ 分离不可分是**经典**墙，量子化绕开 |
+| 付费桥2·非平凡Hopf荷来源 | `exp_pi_flux_3D_quantum_hopf` | **正结果（来源 = 完整 SU(2)_k，非 Z₂）** | 经典 Z₂（±I）Hopf 映射 → 单点（S² 平凡）；完整 SU(2)（非中心）→ 覆盖 S²（北极→南极，非平凡）。→ 非平凡 Hopf 荷来源 = 量子化的**完整** SU(2)_k |
+| 付费桥2·局域化由量子化 | `exp_pi_flux_3D_quantum_localize` | **正结果（量子化把全局平移变局域配对）** | 经典 SU(2)（磁平移）= 全局平移（P_xT_xP_x=0）；量子 SU(2)_k（Temperley-Lieb e_i）= 相邻点配对（site 局域）。→ 局域化由量子化完成 |
+| 付费桥2·弦↔格点 | `exp_tl_string_site` | **正结果（经典弦=自旋1/2线成立 + q变形分叉）** | 经典 δ=2：$e_i$=相邻自旋 singlet 投影，弦=自旋 1/2 线、端点=Bloch 球面 S²（braid 成立、局域 $[e_1,M_{q3}]=0$）。q 变形：recoupling 系数 1/4 逼 braid 要求 δ²=4 → **自旋 1/2 张量积只给 δ=2**，q 变形（δ=量子维度≠2）需「图基」（loop 模型） |
+| 付费桥2·层2 loop 模型 | `exp_loop_model` | **正结果（q 变形 TL 在图基上成立）** | 图基（非交叉配对）维度=Catalan C₄=14（≠自旋1/2 的 2⁴=16）；TL 三关系（e²=δe、eee=e、远距）k=1..10 全 True；Markov 迹 tr(1)=1、tr(e₁)=1/δ；JW 截断 D_{k+1}=0；loop weight=量子维度 2cos(π/(k+2))、环=S¹ 纤维。⚠️ 代码 bug：`exp_jones` 等用 A=q^{1/4} 应改 q^{1/2} |
+| 付费桥2·格点嵌入 | `exp_loop_lattice` | **正结果（6-vertex loop weight = 量子维度）** | 6-vertex 权重 a=sin(γ-u),b=sin(u),c=sinγ 给 loop weight n=(a²+b²-c²)/(ab)=-2cosγ=-(q+q⁻¹)（k=1..10 精确）；q 变形不在 singlet 向量（q-singlet recoupling 仍 c=1/4→δ=2）、在 6-vertex 权重里。抽象弦图 = 格点 6-vertex loop 世界线 |
+| 付费桥2·层3 判据1 | `exp_s2_probe` | **负结果（坐实 U(1)，不是 S²）** | XXZ 链对称性：q 变形点 Δ=cos(π/(k+2))<1 时 [H,S²]≠0（SO(3) 破坏，只剩 U(1)，k=2..10 精确）；S² 场只在 Δ=1（各向同性 δ=2）。→ q 变形连续极限给 U(1) 不给 S²，付费桥 2 的 S² 场需额外构造（WZW 边界 / 代数版 S²_q）|
+| 付费桥2·层3 路2侦察 | `exp_s2q_probe` | **正结果（S²_q = 截断量子球面）** | 量子维度 d_j=[2j+1]_q=sin((2j+1)γ)/sinγ，j=0..k/2 截断（d_{k/2}=1、d_{k/2+1/2}=0，k=2..10 精确）；k→∞ 恢复 2j+1（经典维度），坐标块 d_1=[3]_q→3（S² 三坐标）。融合范畴层面，不需「边界」概念 |
+| 付费桥2·层3 q-6j | `exp_s2q_cg` | **发现（标准内积正交性被 q 变形破坏）** | V_{1/2}⊗V_{1/2}=V_0⊕V_1：q-singlet 正确湮灭 Δ(E),Δ(F)；但 ⟨s_q\|1,0⟩_std=(1-q⁻²)/2≠0（k=2..10 精确），因 Δ(F) 非厄米。fusion 正交分解需不变内积/JW 幂等元，非标准正交投影；q→1 恢复 |
+| 付费桥2·层3 q极限 | `exp_qclassical_limit` | **正结果（线1：SO_q(3)→SO(3) 严格）** | V_1 q 变形表示精确满足 U_q(su2) 关系（~1e-16）；q→1 收敛到经典 j=1（E→J_+、F→J_-、K→2J_z，k=500 误差 1e-5 单调收敛）；so(3) [Jx,Jy]=iJz（2e-16）。线 2（量子 Hopf 荷→经典）开放 |
+| 离散→连续·iℏ试金石 | `exp_wielandt_wintner` | **坐实（真桥=观察者内化）** | Tr[X,P]=0 对所有有限 N（Wielandt-Wintner）；[X,P] 非对角≈i/2、对角=0 → 有限维给不了 iℏI。粗粒化/大 N 展开是「取极限」伪装，真桥=观察者代数 Type III→II（字典七号） |
+| 桥A·时间纳入 | `exp_time_action` | **正结果（时间纳入闭环）** | 号差（D²=-D_t²+D_x²，J 通过 γ⁰²=-1 进 S[D]）与演化（H=γ⁰γ¹p 厄米）从同一 D 自洽；[J,K]=2γ⁰γ¹p≠0 是 **feature 且是时间纳入本身**（反对易⟹交叉项抵消⟹干净号差；对易⟹号差被 2γ⁰γ¹D_tD_x 污染）。剩曲率项+费米子项 |
+| 离散crossed product试探 | `exp_crossed_product` | **负结果（离散给不出 Type II）** | 「观察=加时钟」离散版（J 耦合 Z₄）给 crossed product A⋊Z₄ = 16 维 Type I（有限维），给不出 Type II；Type II 需连续时钟 ℝ=无限维=「离散→连续」坎。Type III→II 无离散捷径 |
+| 全息翻转试探 | `exp_holographic_probe` | **负结果（翻转不绕过坎）** | 「有限维=边界投影」翻转不绕过「离散→连续」：全息解码（HaPPY）重建体是有限维 Type I（M_{2^k}，4/16/64/256/65536）；连续体 Type II 需 k→∞ 连续极限。翻转价值=方向性（decode 有工具），非存在性（坎还在） |
+| 共振试探（邓煜思路） | `exp_spectrum_resonance` | **部分（共振→能带聚集，但未到 Type II）** | π 磁通谱在共振（Kramers 简并 231 对 + Dirac 色散）下聚集成能带/van Hove（std 0.170 vs 均匀 0.010），不是均匀离散；但能带仍是有限谱，Type II 仍需 N→∞ |
+| 卡点精确化（能带vs代数） | `exp_band_vs_spectrum` | **精确化（连续拆两层）** | 能带 E(k) 是 k 的解析函数（连续区间 [-2√2,2√2]，有限 N 就存在，可恢复）；但谱是 256 个离散本征值（有限维，即使 N→∞ 也是可数并集）。共振恢复「能带连续」，不恢复「代数无限维」（Type II）——真坎 = 「能带连续→代数无限维」 |
+| 自指试探 | `exp_self_reference` | **负结果（自指给不出 Type II）** | 离散模流 σ_n=ρ^n x ρ^{-n} 张成 ≤N²=16 维（Type I）；无限递归归纳极限 = AF 代数，弱闭包 = 超有限 II₁ 因子 = N→∞。自指概念对（无限=递归非规模），但数学 = N→∞ 归纳极限，非绕过 |
+| 万物本静试探 | `exp_rest` | **负结果（静产生动给不出 Type II）** | 有限维态 ρ 的模流 σ_t=ρ^{it}xρ^{-it} 是内自同构，轨道=单位圆（连续）但代数（不动点 N 维 + 生成 ≤N²）Type I。动连续≠代数无限维；Type II 需外自同构（Type III 模流）= 无限维态 |
+| 自反映射试探 | `exp_reflexive_map` | **负结果（φ=J共轭是对合，给不出 Type II）** | 「观察=有向区分」代数化为 φ(x)=JxJ⁻¹（J²=-I）→ 对合 φ²=id，不动点=J中心化子 N²/2 维，生成 M_N。有向区分=有限阶对合，给不出无限递归 |
+| 自反性数学·正面构造 | `exp_self_referential_algebra` | **正结果（自反性=超有限 Type II₁ 因子 R）** | 观察无限递归 D_n=M_{N^{2^n}} 的归纳极限=超有限因子 R：无限维（N^{2^n}→∞）+ 有限迹 τ(1)=1（连续迹）+ 无最小投影。自反性非空白=超有限因子 R，Type II₁ 结构明确 |
+| 观察=条件期望（静翻转） | `exp_observer_projection` | **正结果（方向翻转：观察=切割）** | 观察=条件期望 E:R→D（保迹投影），E²=E、τ(E(x))=τ(x)。观察是「无限维→有限维」投影（可做），非「有限维→无限维」（到不了）。R 本体（静）、D 现象（动），万物本静落地 |
 | 逼三维·Jones 判别器 | `exp_force3d_jones_toy` | **正结果（绕远但可用）** | Jones 区分 2D 平凡（σ⁰→d）vs 3D Hopf（σ²→−A⁴−A⁻⁴）；TL₂ Markov 迹递推，err ~1e-15 |
 | 逼三维·作用量项 | `exp_force3d_jones_action` | **正结果（绕远但可用）** | S_link=−ν\|V(σ^k)−V(σ⁰)\|：σ⁰（2D）奖励 0、σ²（3D）奖励 −1.85 |
 | 逼三维·读 k | `exp_force3d_read_k` | **正结果（绕远但可用）** | 环结构→交叉→Gauss 链接（2D=0/3D=−1）→k→S_link |
@@ -176,6 +198,8 @@ Exp2 fail（Tr(D⁴) 对相位盲）；Exp3 pass（号差需 Dirac / 有向结�
 - **负结果钉子**：虚相位不给号差；经典曲率/热难产非平凡拓扑；裸重连无组织；纯 Tr(D²) 不选维；复现几何偏向低维（文档）；纯迹 Tr(D⁴) 压不出环（度约束下模长项偏好 dimer）；随机相位不自发 k=2（Exp7，GUE 全单态）
 - **已钉死（归档）**：π 磁通偶数尺寸（N=16/36/64）自对偶（T²=−1 Kramers 结构，J 验证误差~0）——「k=2 二元」藏在 π 磁通的涌现时间反演里，非随机相位（Exp7）
 - **已钉死（2026-09-11）**：3D π 磁通 SU(2) 在**动量空间**（磁平移 Tₓ,T_y,T_z 生成 Cl(3)，不可约分解 = 32 个泡利块全由动量标签组织、位置弥散 var(x)=均匀值）；且全局 SU(2) 生成元 = 磁平移 Tᵢ **本身**（恒等式，无固定点置换 = 非局域自旋）——付费桥 2 = 动量 SU(2) → 自旋 SU(2) = 自旋联络 ω_μ
+- **已钉死（2026-09-12）**：付费桥 2 层 2——q 变形 TL 在**图基（loop 模型/非交叉配对）**上成立（loop weight = 量子维度 2cos(π/(k+2))，tr(e₁)=1/δ，JW 截断 D_{k+1}=0，环 = S¹ = Hopf 纤维）；自旋 1/2 张量积只给 δ=2（recoupling 逼 δ²=4），故图基才是 q 变形 SU(2) 的正确表示。下一步 = 格点嵌入（honeycomb/6-vertex → 实空间 S² 场）
+- **已钉死（2026-09-12）**：「离散 → 连续」收敛——8 试探坐实「有限维给不了无限维」（iℏ 试金石 / crossed product / 全息 / 共振 / 自指 / 万物本静 / 自反映射），2 正面构造翻转方向（自反性 = 超有限 Type II₁ 因子 R，观察 = 条件期望 E）。最终 = 「二元论 → 一元论」翻转：本然连续（R 本体）、观察（E）切离散（D）。完整推导见 vault [[离散→连续：完整推导记录]]
 - **归档未过关**：Exp6a 的 Q=2；谱流 net flow≠1——复现时勿把 README 旧口头「全过」当真，以 json 为准
 
 ---
@@ -486,6 +510,8 @@ N=30，steps=1e5。闭弦计数/长度来回跳，无「少数大弦主导」趋
 | `exp_jones_wenzl` | hecke 不逼单位根；JW 截断零点随 k 移位 |
 | `exp_relation_to_topology` | 谱投影幂等；truncation=Chebyshev 零 |
 | `exp_finite_quantization` | chebyshev_identity_holds=true；k=N−1 |
+| `exp_loop_model` | 图基 C₄=14；TL 三关系 k=1..10 全 True；tr(e₁)=1/δ；JW 截断 D_{k+1}=0 |
+| `exp_loop_lattice` | 6-vertex loop weight n=(a²+b²-c²)/(ab)=-2cosγ=-(q+q⁻¹)；q-singlet recoupling 仍 1/4 |
 
 ---
 
@@ -502,6 +528,14 @@ N=30，steps=1e5。闭弦计数/长度来回跳，无「少数大弦主导」趋
 **三维**：暖/干净近邻稳定 ≠ 冷启动自发选三维；维数压力需拓扑层。
 
 **量子化开关**：经典不固定交叉振幅 A；JW 截断 / 有限 N Chebyshev 才逼单位根。
+
+**付费桥 2·层 2（loop 模型，2026-09-12）**：q 变形 TL（δ=2cos(π/(k+2))）在图基（非交叉配对）上成立，自旋 1/2 张量积只给 δ=2（recoupling c=1/4 → δ²=4）。loop weight = 量子维度，JW 截断 D_{k+1}=0。环 = S¹ = Hopf 纤维（补刀 2 的「弧」）。**代码约定**：loop value 用 A=q^{1/2}（得 −2cos(π/(k+2))），`exp_jones`/`exp_pairing_to_braid` 旧用 A=q^{1/4} 是 bug（角度差 2 倍）。
+
+**格点嵌入（6-vertex，2026-09-12）**：6-vertex 权重 a=sin(γ-u), b=sin(u), c=sin(γ) 给 loop weight n=(a²+b²-c²)/(ab)=−2cosγ=−(q+q⁻¹)（=量子维度，负号约定）。q 变形**不在 singlet 向量**（q-singlet recoupling 仍 c=1/4→δ=2）、**在 6-vertex 权重参数化**里。抽象弦图 = 格点 6-vertex loop 世界线。
+
+**付费桥 2·层 3（S² 场的来源 + 桥，2026-09-12）**：q 变形连续极限给 **U(1) 不给 S²**（XXZ 链 [H,S²]≠0，SO(3) 破坏）——S² 场不在 loop 模型的直接连续极限里。S²_q = 截断量子球面（量子维度 [2j+1]_q）。**桥**：V_1 三方向 = Cartan 子代数（有向区分唯一确定）→ SO(3) 矢量 = 物理空间三维（经典）；SO_q(3)→SO(3) q→1 严格（线 1）。量子 Hopf 荷 → 经典（线 2）**开放**。
+
+**离散 → 连续（8 试探 + 2 构造 + 一元论翻转，2026-09-12）**：Type I（有限维）→ Type II（无限维有迹）被 8 个试探坐实「有限维到不了无限维」（iℏ 试金石 / 离散 crossed product / 全息 / 共振 / 自指 / 万物本静 / 自反映射）。3 个正面构造翻转方向：**自反性 = 超有限 Type II₁ 因子 R**（观察无限递归的归纳极限），**观察 = 条件期望 E**（保迹投影，从无限维 R 切到有限维 D）。最终收敛 = **「二元论 → 一元论」翻转**：本然是连续的（R 本体），观察（E）切出离散（D）。完整推导见 vault [[离散→连续：完整推导记录]]。
 
 ---
 
@@ -567,6 +601,27 @@ python -m experiments.exp_pi_flux_3D_localize
 python -m experiments.exp_pi_flux_3D_first_wall
 python -m experiments.exp_pi_flux_3D_curvature
 python -m experiments.exp_pi_flux_3D_separation
+python -m experiments.exp_pi_flux_3D_quantum_separation
+python -m experiments.exp_pi_flux_3D_quantum_hopf
+python -m experiments.exp_pi_flux_3D_quantum_localize
+python -m experiments.exp_tl_string_site
+python -m experiments.exp_loop_model
+python -m experiments.exp_loop_lattice
+python -m experiments.exp_s2_probe
+python -m experiments.exp_s2q_probe
+python -m experiments.exp_s2q_cg
+python -m experiments.exp_qclassical_limit
+python -m experiments.exp_wielandt_wintner
+python -m experiments.exp_time_action
+python -m experiments.exp_crossed_product
+python -m experiments.exp_holographic_probe
+python -m experiments.exp_spectrum_resonance
+python -m experiments.exp_band_vs_spectrum
+python -m experiments.exp_self_reference
+python -m experiments.exp_rest
+python -m experiments.exp_reflexive_map
+python -m experiments.exp_self_referential_algebra
+python -m experiments.exp_observer_projection
 ```
 
 依赖：`numpy>=1.24`，`scipy>=1.10`。结果写入对应 `experiments/<name>_last_run.json`。
