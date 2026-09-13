@@ -1,0 +1,43 @@
+{
+  "probe": "XXZ symmetry",
+  "result": "q-deformed point breaks SO(3) to U(1); S^2 field only at Delta=1",
+  "rows": [
+    {
+      "k": 2,
+      "Delta": 0.7071,
+      "comm_Sz": 0.0,
+      "comm_S2": 224.94199204873155,
+      "SO3_preserved": false
+    },
+    {
+      "k": 3,
+      "Delta": 0.809,
+      "comm_Sz": 0.0,
+      "comm_S2": 146.67494832004007,
+      "SO3_preserved": false
+    },
+    {
+      "k": 4,
+      "Delta": 0.866,
+      "comm_Sz": 0.0,
+      "comm_S2": 102.89248989355109,
+      "SO3_preserved": false
+    },
+    {
+      "k": 5,
+      "Delta": 0.901,
+      "comm_Sz": 0.0,
+      "comm_S2": 76.05590945094194,
+      "SO3_preserved": false
+    },
+    {
+      "k": 10,
+      "Delta": 0.9659,
+      "comm_Sz": 0.0,
+      "comm_S2": 26.168965409995575,
+      "SO3_preserved": false
+    }
+  ],
+  "isotropic_Delta_1_SO3_preserved": true,
+  "note": "q-deformed continuum limit = U(1), not S^2. \u4ed8\u8d39\u68652 S^2 field needs extra construction: WZW boundary states or algebraic S^2_q (Podles quantum sphere)."
+}

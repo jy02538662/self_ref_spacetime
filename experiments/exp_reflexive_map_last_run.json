@@ -1,0 +1,8 @@
+{
+  "phi_is_involution": true,
+  "fixed_point_dim": 8,
+  "generated_algebra": "M_4 (finite)",
+  "closure_type": "Type I (finite-dim)",
+  "produces_hyperfinite_factor": false,
+  "note": "phi = J-conjugation is an involution; its algebraic closure (fixed points, iteration, generation) is finite-dim (Type I), no Type II entry."
+}

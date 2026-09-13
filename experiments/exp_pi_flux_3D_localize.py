@@ -1,9 +1,9 @@
-"""Next cut on paid-bridge-2: are the SU(2) generators LOCAL spins or the
-(global) magnetic translations?
+"""Paid-bridge-2: are the SU(2) generators LOCAL spins or the (global) magnetic
+translations?
 
-We build the global SU(2) generators from the Cl(3) irreps (block-diagonal
-Pauli blocks in momentum-block basis), transform to the POSITION basis, and
-measure locality.
+Build the global SU(2) generators from the Cl(3) irreps (block-diagonal Pauli
+blocks in momentum-block basis), transform to the POSITION basis, and measure
+locality.
 
 Result (rigorous identity): the global generators ARE the magnetic translations
 T_x, T_y, T_z themselves.  In the position basis T_i is a shift (x -> x+1, a
@@ -98,26 +98,19 @@ def main():
                         Tv = Tv / np.linalg.norm(Tv)
                         blocks.append((sx, sy, sz, lam_chi, lamx, np.stack([v, Tv], axis=1)))
 
-    # block basis B
     B = np.zeros((N, N), dtype=complex)
     for i, (_, _, _, _, _, basis) in enumerate(blocks):
         B[:, 2 * i: 2 * i + 2] = basis
     B_unitary = bool(np.allclose(B.conj().T @ B, np.eye(N)))
 
-    # global generators (block-diagonal in block basis)
-    Js_blk = {}
-    for key, T in [('x', Tx), ('y', Ty), ('z', Tz)]:
-        J = np.zeros((N, N), dtype=complex)
-        for i, (_, _, _, _, _, basis) in enumerate(blocks):
-            J[2 * i: 2 * i + 2, 2 * i: 2 * i + 2] = basis.conj().T @ T @ basis
-        Js_blk[key] = J
-
-    # transform to position basis + locality
     identity = {}
     row_pr_mean = {}
     diag_frac = {}
     for key, T in [('x', Tx), ('y', Ty), ('z', Tz)]:
-        Jpos = B @ Js_blk[key] @ B.conj().T
+        J = np.zeros((N, N), dtype=complex)
+        for i, (_, _, _, _, _, basis) in enumerate(blocks):
+            J[2 * i: 2 * i + 2, 2 * i: 2 * i + 2] = basis.conj().T @ T @ basis
+        Jpos = B @ J @ B.conj().T
         identity[key] = bool(np.allclose(Jpos, T))
         prs = []
         for r in range(N):
@@ -130,10 +123,9 @@ def main():
     print("=== are the SU(2) generators local spins or magnetic translations? ===")
     print(f"block basis unitary: {B_unitary}")
     print(f"J_pos == T (identity): {identity}")
-    print(f"row PR mean (position basis): {row_pr_mean}  (1=permutation, N=delocalized)")
-    print(f"diagonal fraction (position basis): {diag_frac}  (0=off-diagonal/translation, 1=diagonal/local spin)")
+    print(f"row PR mean (position basis): {row_pr_mean}")
+    print(f"diagonal fraction (position basis): {diag_frac}")
     print("=> generators ARE the magnetic translations (translations, not local spins).")
-    print("   pi-flux SU(2) = MOMENTUM SU(2); paid-bridge-2 = momentum SU(2) -> spin SU(2).")
 
     summary = {
         "N": N, "L": L,

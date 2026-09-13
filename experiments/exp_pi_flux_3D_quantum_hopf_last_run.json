@@ -1,0 +1,24 @@
+{
+  "center_Z2_hopf_images": {
+    "I": [
+      0.0,
+      0.0,
+      1.0
+    ],
+    "-I": [
+      0.0,
+      0.0,
+      1.0
+    ]
+  },
+  "center_maps_to_single_point": true,
+  "complete_SU2_sweep_covers_S2": true,
+  "quantum_dimension": {
+    "1": 1.0000000000000002,
+    "2": 1.4142135623730951,
+    "3": 1.618033988749895,
+    "5": 1.8019377358048383,
+    "10": 1.9318516525781366
+  },
+  "note": "Classical pi-flux only has the center Z_2 -> Hopf maps to a single point (trivial S^2, winding=0).  The quantized SU(2)_k is COMPLETE (non-central) -> covers S^2 -> non-trivial S^2 order parameter -> non-trivial Hopf.  So the source of non-trivial Hopf charge is the QUANTIZED complete SU(2)_k."
+}

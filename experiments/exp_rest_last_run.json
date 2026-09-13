@@ -1,0 +1,9 @@
+{
+  "orbit_continuous": true,
+  "orbit_dimension": "circle (1-dim manifold)",
+  "fixed_point_algebra_dim": 4,
+  "generated_algebra_dim": 16,
+  "flow_type": "Type I (finite-dim, inner automorphism)",
+  "flip_bypasses_obstacle": false,
+  "note": "motion is relative (state generates flow), but finite-dim flow is inner; continuous orbit != algebraic infinity (Type II)."
+}

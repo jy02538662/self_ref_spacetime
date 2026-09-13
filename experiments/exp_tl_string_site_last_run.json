@@ -1,0 +1,15 @@
+{
+  "classical_delta2": {
+    "n_triplet_eigenvalues": 3,
+    "n_singlet_eigenvalues": 1,
+    "braid_holds": true,
+    "locality_commutator": 0.0,
+    "string_is_spin12_line": true
+  },
+  "q_deformed": {
+    "recoupling_coefficient_c": 0.25,
+    "braid_forces_delta_squared_4": true,
+    "conclusion": "spin-1/2 tensor product only gives delta=2; q-deformed TL needs diagram basis (loop model)"
+  },
+  "note": "Step-1 (string <-> lattice site): classical (delta=2) string = spin-1/2 line with endpoint = Bloch sphere S^2, VERIFIED. The q-deformed version (delta = quantum dimension) needs the DIAGRAM basis (loop model), where the string is an abstract pairing, not a spin-1/2 line."
+}

@@ -1,0 +1,77 @@
+{
+  "diagram_basis_dim": 14,
+  "spin_half_dim": 16,
+  "tl_relations_hold_on_diagram_basis": [
+    {
+      "k": 1,
+      "delta": 1.0000000000000002,
+      "e2_de": true,
+      "eee_e": true,
+      "far": true
+    },
+    {
+      "k": 2,
+      "delta": 1.414213562373095,
+      "e2_de": true,
+      "eee_e": true,
+      "far": true
+    },
+    {
+      "k": 3,
+      "delta": 1.618033988749895,
+      "e2_de": true,
+      "eee_e": true,
+      "far": true
+    },
+    {
+      "k": 4,
+      "delta": 1.7320508075688774,
+      "e2_de": true,
+      "eee_e": true,
+      "far": true
+    },
+    {
+      "k": 5,
+      "delta": 1.801937735804838,
+      "e2_de": true,
+      "eee_e": true,
+      "far": true
+    },
+    {
+      "k": 10,
+      "delta": 1.9318516525781368,
+      "e2_de": true,
+      "eee_e": true,
+      "far": true
+    }
+  ],
+  "markov_trace_tr_e1_eq_1_over_delta": true,
+  "jw_truncation": [
+    {
+      "k": 1,
+      "delta": 1.0,
+      "first_zero_Delta_n": 2
+    },
+    {
+      "k": 2,
+      "delta": 1.4142,
+      "first_zero_Delta_n": 3
+    },
+    {
+      "k": 3,
+      "delta": 1.618,
+      "first_zero_Delta_n": 4
+    },
+    {
+      "k": 4,
+      "delta": 1.7321,
+      "first_zero_Delta_n": 5
+    },
+    {
+      "k": 5,
+      "delta": 1.8019,
+      "first_zero_Delta_n": 6
+    }
+  ],
+  "note": "layer 2: q-deformed TL lives on the diagram (loop) basis; loop weight = quantum dimension 2cos(pi/(k+2)); loop = S^1 = Hopf fiber. Spin-1/2 tensor product only gives delta=2 (layer 1, classical)."
+}

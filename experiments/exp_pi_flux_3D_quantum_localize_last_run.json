@@ -1,0 +1,6 @@
+{
+  "classical_Tx_site_projection_max": 0.0,
+  "classical_su2_is_global_shift": true,
+  "quantum_tl_e1_is_local_pairing": true,
+  "note": "Classical pi-flux SU(2) = magnetic translation (global shift, P_x T_x P_x = 0, non-local).  Quantized SU(2)_k = Temperley-Lieb e_i (local nearest-neighbor pairing).  Quantization turns SU(2) from a global translation into a local pairing, so localization is done BY quantization."
+}

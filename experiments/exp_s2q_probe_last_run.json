@@ -1,0 +1,33 @@
+{
+  "S2q_function_algebra": "(+)_j V_j (x) V_j*, j=0..k/2",
+  "truncation": [
+    {
+      "k": 2,
+      "d_k_over_2": 1.0,
+      "d_k_over_2_plus_half": 0.0
+    },
+    {
+      "k": 3,
+      "d_k_over_2": 1.0,
+      "d_k_over_2_plus_half": 0.0
+    },
+    {
+      "k": 4,
+      "d_k_over_2": 1.0,
+      "d_k_over_2_plus_half": 0.0
+    },
+    {
+      "k": 5,
+      "d_k_over_2": 1.0,
+      "d_k_over_2_plus_half": 0.0
+    },
+    {
+      "k": 10,
+      "d_k_over_2": 1.0,
+      "d_k_over_2_plus_half": 0.0
+    }
+  ],
+  "classical_limit_d_j_to_2j1": true,
+  "coordinate_block_j1_d1_eq_3q": true,
+  "note": "S^2_q = truncated quantum sphere; fusion-category level, no boundary concept needed. Route 2 recon step 1."
+}

@@ -1,0 +1,8 @@
+{
+  "E_projection": true,
+  "E_trace_preserving": true,
+  "observation_direction": "infinite (R) -> finite (D), a projection",
+  "D_is_image_of_cut": true,
+  "R_is_substance": true,
+  "note": "observation = conditional expectation E (trace-preserving projection R->D); R is the substance, D is the relative phenomenon (\u4e07\u7269\u672c\u9759)."
+}

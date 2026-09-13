@@ -1,0 +1,7 @@
+{
+  "band_analytic": true,
+  "spectrum_discrete_count": 256,
+  "band_continuity_restorable": true,
+  "algebraic_infinity_not_restorable": true,
+  "note": "resonance restores band continuity (E(k) analytic), NOT algebraic infinity (Type II); the true obstacle is 'band continuity -> algebraic infinity' (N->inf)."
+}

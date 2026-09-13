@@ -1,0 +1,44 @@
+{
+  "classical_anticommutator_with_flux": 0.0,
+  "classical_anticommutator_without_flux": 16.0,
+  "classical_su2_depends_on_flux": true,
+  "quantum_su2_k_survives_without_flux": {
+    "3": {
+      "delta": 1.4142135623730951,
+      "Delta_Nminus1_is_1": true,
+      "Delta_N_is_0": true,
+      "level_k": 2
+    },
+    "4": {
+      "delta": 1.618033988749895,
+      "Delta_Nminus1_is_1": true,
+      "Delta_N_is_0": true,
+      "level_k": 3
+    },
+    "5": {
+      "delta": 1.7320508075688774,
+      "Delta_Nminus1_is_1": true,
+      "Delta_N_is_0": true,
+      "level_k": 4
+    },
+    "6": {
+      "delta": 1.8019377358048383,
+      "Delta_Nminus1_is_1": true,
+      "Delta_N_is_0": true,
+      "level_k": 5
+    },
+    "7": {
+      "delta": 1.8477590650225735,
+      "Delta_Nminus1_is_1": true,
+      "Delta_N_is_0": true,
+      "level_k": 6
+    },
+    "8": {
+      "delta": 1.8793852415718169,
+      "Delta_Nminus1_is_1": true,
+      "Delta_N_is_0": true,
+      "level_k": 7
+    }
+  },
+  "note": "The separation wall (#6) is a CLASSICAL artifact: classical SU(2) is emergent from U(1) flux.  The quantized SU(2)_k (finite-N Chebyshev truncation, delta=2cos(pi/(N+1))) is INDEPENDENT of the flux.  So quantization bypasses the 'separation is impossible' wall."
+}

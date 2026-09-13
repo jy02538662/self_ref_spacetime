@@ -1,0 +1,6 @@
+{
+  "signature_time_negative": true,
+  "H_hermitian": true,
+  "J_K_do_not_commute": true,
+  "note": "time direction (J, signature via g0^2=-1) and evolution (H, via D psi=0) are consistent from one D; but [J,K]!=0 so time != direction x space (entangled)."
+}

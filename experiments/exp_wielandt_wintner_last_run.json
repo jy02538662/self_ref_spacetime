@@ -1,0 +1,43 @@
+{
+  "wielandt_wintner": "Tr[X,P]=0 for all finite N",
+  "off_diagonal_structure": "~i/2, diagonal=0",
+  "conclusion": "i*hbar needs infinite-dim (observer algebra Type III->II), not limit nor large-N expansion",
+  "rows": [
+    {
+      "N": 4,
+      "trace": 0.0,
+      "max_diag": 0.0,
+      "off_diag": 0.5
+    },
+    {
+      "N": 8,
+      "trace": 0.0,
+      "max_diag": 0.0,
+      "off_diag": 0.5
+    },
+    {
+      "N": 16,
+      "trace": 0.0,
+      "max_diag": 0.0,
+      "off_diag": 0.5
+    },
+    {
+      "N": 32,
+      "trace": 0.0,
+      "max_diag": 0.0,
+      "off_diag": 0.5
+    },
+    {
+      "N": 64,
+      "trace": 0.0,
+      "max_diag": 0.0,
+      "off_diag": 0.5
+    },
+    {
+      "N": 128,
+      "trace": 0.0,
+      "max_diag": 0.0,
+      "off_diag": 0.5
+    }
+  ]
+}

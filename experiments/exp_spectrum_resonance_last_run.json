@@ -1,0 +1,7 @@
+{
+  "kramers_degenerate_pairs": 231,
+  "spectral_density_std_flux": 0.17021907378744228,
+  "spectral_density_std_uniform": 0.010334966058846056,
+  "resonance_aggregates_into_bands": true,
+  "note": "pi-flux spectrum aggregates into bands (van Hove) via Kramers degeneracy + Dirac dispersion = resonance structure, NOT uniform discrete. Minimal evidence for 'continuous = resonance' (Yu Deng-style)."
+}

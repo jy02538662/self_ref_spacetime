@@ -1,0 +1,7 @@
+{
+  "u_q_su2_relations_hold_on_V1": true,
+  "classical_limit_E_F_K_to_J": true,
+  "so3_commutation_holds": true,
+  "line2_quantum_hopf": "OPEN (noncommutative topology, not yet defined)",
+  "note": "SO_q(3) -> SO(3) = physical 3D as q->1 (line 1 of merger point, rigorous). Quantum Hopf invariant -> classical (line 2) is open."
+}

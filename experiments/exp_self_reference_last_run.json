@@ -1,0 +1,7 @@
+{
+  "modular_flow_span_dim": 16,
+  "modular_flow_type": "Type I (finite-dim)",
+  "infinite_recursion_limit": "AF algebra -> hyperfinite II_1 (N->inf)",
+  "self_reference_bypasses_obstacle": false,
+  "note": "self-reference on finite-dim D stays Type I; the infinity is the inductive limit (hyperfinite factor R) = N->inf, re-labelled not bypassed."
+}

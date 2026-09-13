@@ -1,0 +1,6 @@
+{
+  "discrete_crossed_product_dim": 16,
+  "discrete_crossed_product_type": "Type I (finite-dim)",
+  "type_II_requires": "continuous clock (R), i.e. discrete->continuous",
+  "note": "observer=add-clock (discrete J, Z_4) stays Type I; Type II needs the continuous clock = the discrete->continuous obstacle (Wielandt-Wintner)."
+}

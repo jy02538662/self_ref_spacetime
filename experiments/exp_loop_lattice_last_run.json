@@ -1,0 +1,43 @@
+{
+  "loop_weight_formula": [
+    {
+      "k": 1,
+      "n": -1.0000000000000007,
+      "minus_2cos_gamma": -1.0000000000000002,
+      "match": true
+    },
+    {
+      "k": 2,
+      "n": -1.4142135623730963,
+      "minus_2cos_gamma": -1.4142135623730951,
+      "match": true
+    },
+    {
+      "k": 3,
+      "n": -1.618033988749895,
+      "minus_2cos_gamma": -1.618033988749895,
+      "match": true
+    },
+    {
+      "k": 4,
+      "n": -1.7320508075688779,
+      "minus_2cos_gamma": -1.7320508075688774,
+      "match": true
+    },
+    {
+      "k": 5,
+      "n": -1.801937735804839,
+      "minus_2cos_gamma": -1.8019377358048383,
+      "match": true
+    },
+    {
+      "k": 10,
+      "n": -1.9318516525781355,
+      "minus_2cos_gamma": -1.9318516525781366,
+      "match": true
+    }
+  ],
+  "q_singlet_recoupling_still_quarter": true,
+  "diagram_loop_weight_equals_6vertex": true,
+  "note": "6-vertex loop weight = quantum dimension 2cos(pi/(k+2)) = q-deformed TL loop weight (diagram basis). q-deformation is in the weights, not the singlet."
+}

@@ -1,0 +1,33 @@
+{
+  "fusion": "V_{1/2}(x)V_{1/2} = V_0 (+) V_1",
+  "q_singlet_annihilated": true,
+  "discovery": "standard inner product orthogonality is BROKEN by q-deformation (<s|1,0> = (1-q^{-2})/2 != 0); recovered at q->1",
+  "rows": [
+    {
+      "k": 2,
+      "overlap_std": 0.7071,
+      "expected": 0.7071
+    },
+    {
+      "k": 3,
+      "overlap_std": 0.5878,
+      "expected": 0.5878
+    },
+    {
+      "k": 4,
+      "overlap_std": 0.5,
+      "expected": 0.5
+    },
+    {
+      "k": 5,
+      "overlap_std": 0.4339,
+      "expected": 0.4339
+    },
+    {
+      "k": 10,
+      "overlap_std": 0.2588,
+      "expected": 0.2588
+    }
+  ],
+  "note": "q-deformed fusion needs the invariant inner product / JW idempotents, not standard orthogonal projectors. Basis of the S^2_q (q-6j) fusion table."
+}

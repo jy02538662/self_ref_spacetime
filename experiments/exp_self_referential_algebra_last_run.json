@@ -1,0 +1,8 @@
+{
+  "infinite_dimension": true,
+  "finite_trace_tau_1": true,
+  "no_minimal_projection": true,
+  "type": "hyperfinite Type II_1 factor R",
+  "construction": "inductive limit of M_{N^{2^n}} (observer's infinite recursion)",
+  "note": "self-referential algebra = hyperfinite II_1 factor R; reflexivity math is NOT blank, it is R (infinite recursion, finite continuous trace)."
+}
